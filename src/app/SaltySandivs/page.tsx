@@ -13,7 +13,7 @@ type Sandiv = {
 export default function Sal() {
     const [sandivs, setSandivs] = useState<Sandiv[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] =    useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchSandivs() {
@@ -22,7 +22,14 @@ export default function Sal() {
                 if (!response.ok) throw new Error('Veri yüklenemedi');
 
                 const data = await response.json();
-                setSandivs(data.Sandivs || []);
+
+                // Tip kontrolü ekleniyor
+                if (Array.isArray(data.Sandivs)) {
+                    setSandivs(data.Sandivs); // Doğru veri yapısını kullanıyoruz
+                } else {
+                    setSandivs([]); // Hatalı veri gelirse boş dizi set ediyoruz
+                }
+
                 setLoading(false);
             } catch (err) {
                 setError(err instanceof Error ? err.message : "Bilinmeyen hata");
