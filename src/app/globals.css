@@ -88,16 +88,6 @@
     w-full bg-button-shadow rounded-3xl
 }
 
-.sandivLeft{
-    @apply
-    w-1/3
-}
-
-.sandivRight{
-    @apply
-    w-80
-}
-
 .sandivs-div{
     height: calc(100vh - 6rem - 12rem);
     @apply
