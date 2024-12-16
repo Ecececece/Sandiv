@@ -11,9 +11,9 @@ type Sandiv = {
 };
 
 export default function Sal() {
-    const [sandivs, setSandivs] = useState<Sandiv[] | null>(null); // Başlangıç değeri null
+    const [sandivs, setSandivs] = useState<Sandiv[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] =    useState<string | null>(null);
 
     useEffect(() => {
         async function fetchSandivs() {
@@ -37,7 +37,6 @@ export default function Sal() {
 
     if (error) return <div>Hata: {error}</div>;
 
-    // Veriler yüklendiyse render et
     return (
         <div className="flex flex-col">
             <div className="flex justify-center gap-20 m-4">
@@ -58,7 +57,7 @@ export default function Sal() {
             </div>
 
             <div className="sandivs-div" id="scrollable">
-                {sandivs && sandivs.length > 0 ? (
+                {sandivs.length > 0 ? (
                     sandivs.map((sandiv, index) => (
                         <div key={index} className="sandiv">
                             <div className="sandivName">{sandiv.name}</div>
