@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 
+type Ingredient = { enName: string }; // Ingredient türünü belirleyin
 
 export default function Home() {
-    const [ingredients, setIngredients] = useState<any[]>([]);;
+    const [ingredients, setIngredients] = useState<Ingredient[]>([]); // Tür belirtildi
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null); // Hata türünü netleştir
 
     useEffect(() => {
-        async function fetchingredients() {
+        async function fetchIngredients() {
             try {
                 const response = await fetch('/ingredients.json');
                 if (!response.ok) throw new Error('Veri yüklenemedi');
@@ -17,12 +18,12 @@ export default function Home() {
                 const data = await response.json();
     
                 const allIngredients = [
-                    ...data.breadSalty.map(item => ({ ...item, category: 'breadSalty' })),
-                    ...data.breadSweet.map(item => ({ ...item, category: 'breadSweet' })),
-                    ...data.cheese.map(item => ({ ...item, category: 'cheese' })),
-                    ...data.ingredientSalty.map(item => ({ ...item, category: 'ingredientSalty' })),
-                    ...data.ingredientSweet.map(item => ({ ...item, category: 'ingredientSweet' })),
-                    ...data.sauce.map(item => ({ ...item, category: 'sauce' })),
+                    ...data.breadSalty.map((item: Ingredient) => ({ ...item, category: 'breadSalty' })),
+                    ...data.breadSweet.map((item: Ingredient) => ({ ...item, category: 'breadSweet' })),
+                    ...data.cheese.map((item: Ingredient) => ({ ...item, category: 'cheese' })),
+                    ...data.ingredientSalty.map((item: Ingredient) => ({ ...item, category: 'ingredientSalty' })),
+                    ...data.ingredientSweet.map((item: Ingredient) => ({ ...item, category: 'ingredientSweet' })),
+                    ...data.sauce.map((item: Ingredient) => ({ ...item, category: 'sauce' })),
                 ];
     
                 const randombread = data.breadSalty.sort(() => Math.random() - 0.5).slice(0, 1);
@@ -40,24 +41,26 @@ export default function Home() {
                 setIngredients(randomIngredients);
                 setLoading(false);
             } catch (err) {
-                setError(err.message);
+                setError(err instanceof Error ? err.message : "Bilinmeyen hata"); // Tür güvenliği
                 setLoading(false);
             }
         }
     
-        fetchingredients();
+        fetchIngredients();
     }, []);
 
-    function getCategory(index: number): string{
-        if(index == 1 || index == 11)return "breadSalty";
-        else if(index >= 2 && index <= 7) return "ingredientSalty";
-        else if(index == 8) return "cheese";
+    function getCategory(index: number): string {
+        if (index === 1 || index === 11) return "breadSalty";
+        else if (index >= 2 && index <= 7) return "ingredientSalty";
+        else if (index === 8) return "cheese";
         else if (index >= 9 && index <= 10) return "sauce";
+        return ""; // Fallback ekleyebilirsiniz
     }
 
-    function getStyle(index: number): React.CSSProperties{
-        if(index == 1 || index == 11)return { height: '105px', width: '270px' };
-        else if(index >= 2 && index <= 10) return { height: '90px', width: '240px' };
+    function getStyle(index: number): React.CSSProperties {
+        if (index === 1 || index === 11) return { height: '105px', width: '270px' };
+        else if (index >= 2 && index <= 10) return { height: '90px', width: '240px' };
+        return {}; // Default style döndürün
     }
 
     const srcFirst = {
@@ -82,8 +85,7 @@ export default function Home() {
     const [leftPositionHomeBannerName, setLeftPositionHomeBannerName] = useState(0);
 
     const [offsetSandiv] = useState(225);
-    const [offsetHomeBannerName] = useState(1050);
-    
+    const [offsetHomeBannerName] = useState(1160);
 
     useEffect(() => {
         const updatePosition = () => {
@@ -106,31 +108,35 @@ export default function Home() {
             <div className="homeBanner">
                 <div className="sandivIMG">
                     <div className="flex justify-center ml-24">
-                    {loading && <div>Yükleniyor...</div>}
-                    {error && <div>Hata: {error}</div>}
-
+                        {loading && <div>Yükleniyor...</div>}
+                        {error && <div>Hata: {error}</div>}
                         {!loading && !error && ingredients.map((ingredient, index) => {
                             const category = getCategory(index + 1);
                             return (
-                                <img key={index} className="absolute" src={`https://ik.imagekit.io/zvxotlby9c${srcFirst[category]}${ingredient.enName}${srcSecond[category]}`}
-                                style={{ bottom: `${-210 + index * 12}px`, ...getStyle(index + 1) }}/>
+                                <img
+                                    key={index}
+                                    className="absolute"
+                                    src={`https://ik.imagekit.io/zvxotlby9c${srcFirst[category]}${ingredient.enName}${srcSecond[category]}`}
+                                    style={{ bottom: `${-210 + index * 12}px`, ...getStyle(index + 1) }} />
                             );
                         })}
                     </div>
                 </div>
-                
+
                 <div className="homeBannerName" style={{ left: `${leftPositionHomeBannerName}px` }}>SANDIV</div>
 
                 <div className="sandivIMG" style={{ left: `${leftPositionSandiv}px` }}>
                     <div className="flex justify-center mr-2">
-                    {loading && <div>Yükleniyor...</div>}
-                    {error && <div>Hata: {error}</div>}
-
+                        {loading && <div>Yükleniyor...</div>}
+                        {error && <div>Hata: {error}</div>}
                         {!loading && !error && ingredients.map((ingredient, index) => {
                             const category = getCategory(index + 1);
                             return (
-                                <img key={index} className="absolute" src={`https://ik.imagekit.io/zvxotlby9c${srcFirst[category]}${ingredient.enName}${srcSecond[category]}`}
-                                style={{ bottom: `${-210 + index * 12}px`, ...getStyle(index + 1) }}/>
+                                <img
+                                    key={index}
+                                    className="absolute"
+                                    src={`https://ik.imagekit.io/zvxotlby9c${srcFirst[category]}${ingredient.enName}${srcSecond[category]}`}
+                                    style={{ bottom: `${-210 + index * 12}px`, ...getStyle(index + 1) }} />
                             );
                         })}
                     </div>
