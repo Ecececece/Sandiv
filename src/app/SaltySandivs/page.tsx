@@ -79,7 +79,7 @@ export default function Sal() {
                                             }}
                                         />
                                     ))}
-                                    {/* Peynir resimleri */}
+                                    {/* Peynir resimleri, 'none' kontrolü */}
                                     {sandiv.cheese !== "none" && sandiv.cheese.map((cheese, cheeseidx) => (
                                         <img
                                             key={cheeseidx}
@@ -90,7 +90,7 @@ export default function Sal() {
                                             }}
                                         />
                                     ))}
-                                    {/* Sos resimleri */}
+                                    {/* Sos resimleri, 'none' kontrolü */}
                                     {sandiv.sauce !== "none" && sandiv.sauce.map((sauce, sauceidx) => (
                                         <img
                                             key={sauceidx}
