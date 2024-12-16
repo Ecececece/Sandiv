@@ -1,6 +1,5 @@
 'use client';
 
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useEffect, useState } from "react";
 
 type Sandiv = {
@@ -127,7 +126,6 @@ export default function Sal() {
                     <div>Veri bulunamadı.</div>
                 )}
             </div>
-            <SpeedInsights />
         </div>
     );
 }

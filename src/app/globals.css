@@ -28,13 +28,14 @@
 /* ANASAYFA */
 .homeBannerShadow{
     @apply
-    h-homeBanner w-auto bg-background-pink mx-56 my-8 relative
+    h-homeBanner w-auto bg-background-pink relative
     border-solid border-3 border-border-pink rounded-3xl
+    mb-6
 }
 
 .homeBanner{
     height: 97%;
-    bottom: 14px;
+    bottom: 13px;
     @apply
     w-full bg-button-shadow flex flex-row justify-center absolute rounded-3xl
 }
@@ -57,11 +58,27 @@
     font-size: 58pt;
     font-family: 'sandiv', sans-serif;
     text-shadow: 2.5px 2.5px 0px rgb(181,104,191);
-    bottom: -23px;
+    bottom: -10px;
 
     @apply
     w-full text-text-pink no-underline absolute flex justify-center border-t-3 border-border-pink rounded-3xl
 }
+
+.homeButtonShadow{
+    width: calc(50% - (10rem / 2));
+    @apply
+    h-40 bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+}
+
+
+.homeButton{
+    height: 97%;
+    bottom: 5;
+    @apply
+    w-full bg-button-shadow flex flex-row justify-center absolute rounded-3xl
+}
+
 /* ANASAYFA */
 
 
