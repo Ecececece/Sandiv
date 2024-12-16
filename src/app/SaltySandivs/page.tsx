@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useState } from "react";
 
 type Sandiv = {
@@ -11,7 +9,7 @@ type Sandiv = {
 };
 
 export default function Sal() {
-    const [sandivs, setSandivs] = useState<Sandiv[]>([]);
+    const [sandivs, setSandivs] = useState<Sandiv[] | null>(null); // Başlangıç değeri null
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -37,6 +35,7 @@ export default function Sal() {
 
     if (error) return <div>Hata: {error}</div>;
 
+    // Veriler yüklendiyse render et
     return (
         <div className="flex flex-col">
             <div className="flex justify-center gap-20 m-4">
@@ -57,7 +56,7 @@ export default function Sal() {
             </div>
 
             <div className="sandivs-div" id="scrollable">
-                {sandivs.length > 0 ? (
+                {sandivs && sandivs.length > 0 ? (
                     sandivs.map((sandiv, index) => (
                         <div key={index} className="sandiv">
                             <div className="sandivName">{sandiv.name}</div>
@@ -79,7 +78,7 @@ export default function Sal() {
                                             }}
                                         />
                                     ))}
-                                    {/* Peynir resimleri, 'none' kontrolü */}
+                                    {/* Peynir resimleri */}
                                     {sandiv.cheese !== "none" && sandiv.cheese.map((cheese, cheeseidx) => (
                                         <img
                                             key={cheeseidx}
@@ -90,7 +89,7 @@ export default function Sal() {
                                             }}
                                         />
                                     ))}
-                                    {/* Sos resimleri, 'none' kontrolü */}
+                                    {/* Sos resimleri */}
                                     {sandiv.sauce !== "none" && sandiv.sauce.map((sauce, sauceidx) => (
                                         <img
                                             key={sauceidx}
