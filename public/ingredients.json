@@ -1,0 +1,355 @@
+{
+    "breadSalty": [
+        {
+            "enName": "cheddar_swirl_bread",
+            "trName": "Peynirli Spiral Ekmek"
+        },
+        {
+            "enName": "multigrain_bread",
+            "trName": "Çekirdekli Ekmek"
+        },
+        {
+            "enName": "naan_bread",
+            "trName": "Bazlama"
+        },
+        {
+            "enName": "pepperoni_bread",
+            "trName": "Baharatlı Ekmek"
+        },
+        {
+            "enName": "three_cheese_bread",
+            "trName": "3 Peynirli Pizza"
+        },
+        {
+            "enName": "tortilla",
+            "trName": "Lavaş"
+        },
+        {
+            "enName": "wheat_bread",
+            "trName": "Tam Bugday Ekmek"
+        },
+        {
+            "enName": "white_bread",
+            "trName": "Beyaz Ekmek"
+        }
+    ],
+
+    "breadSweet": [
+        {
+            "enName": "paska_bread",
+            "trName": "Pasta Ekmek"
+        },
+        {
+            "enName": "pumpkin_bread",
+            "trName": "Balkabaklı Ekmek"
+        }
+    ],
+
+    "cheese": [
+        {
+            "enName": "agiago_cheese",
+            "trName": "İtalyan Peyniri"
+        },
+        {
+            "enName": "cheddar_cheese",
+            "trName": "Cheddar Peyniri"
+        },
+        {
+            "enName": "chipotle_cheddar",
+            "trName": "Baharatlı Peynir"
+        },
+        {
+            "enName": "havarti_cheese",
+            "trName": "Danimarka Peyniri"
+        },
+        {
+            "enName": "marble_colby_cheese",
+            "trName": "Marble Peyniri"
+        },
+        {
+            "enName": "pepperjack_cheese",
+            "trName": "Biberli Peynir"
+        },
+        {
+            "enName": "provolone_cheese",
+            "trName": "Kaşar Peyniri"
+        },
+        {
+            "enName": "mozzarella_cheese",
+            "trName": "Mozarella Peyniri"
+        },
+        {
+            "enName": "swiss_cheese",
+            "trName": "İsveç Peyniri"
+        }
+    ],
+
+    "ingredientSalty": [
+        {
+            "enName": "green_pepper",
+            "trName": "Yeşil Biber"
+        },
+        {
+            "enName": "bacon",
+            "trName": "Domuz Pastırması"
+        },
+        {
+            "enName": "beef",
+            "trName": "Biftek"
+        },
+        {
+            "enName": "calamari",
+            "trName": "Kalamar"
+        },
+        {
+            "enName": "carrot",
+            "trName": "Havuç"
+        },
+        {
+            "enName": "chicken",
+            "trName": "Tavuk"
+        },
+        {
+            "enName": "chunk",
+            "trName": "Yengeç Parçaları"
+        },
+        {
+            "enName": "cucumber",
+            "trName": "Salatalık"
+        },
+        {
+            "enName": "egg",
+            "trName": "Yumurta"
+        },
+        {
+            "enName": "fajita_peppers",
+            "trName": "Fajita Biberleri"
+        },
+        {
+            "enName": "fried_onion",
+            "trName": "Kızarmış Sogan"
+        },
+        {
+            "enName": "ham",
+            "trName": "Jambon"
+        },
+        {
+            "enName": "jalapeno",
+            "trName": "Jalapeno"
+        },
+        {
+            "enName": "lettuce",
+            "trName": "Marul"
+        },
+        {
+            "enName": "meatball",
+            "trName": "Köfte"
+        },
+        {
+            "enName": "mushroom",
+            "trName": "Mantar"
+        },
+        {
+            "enName": "octopus",
+            "trName": "Ahtapot"
+        },
+        {
+            "enName": "olive",
+            "trName": "Zeytin"
+        },
+        {
+            "enName": "omlette",
+            "trName": "Omlet"
+        },
+        {
+            "enName": "onion",
+            "trName": "Sogan"
+        },
+        {
+            "enName": "pastirma",
+            "trName": "Pastırma"
+        },
+        {
+            "enName": "pickle",
+            "trName": "Turşu"
+        },
+        {
+            "enName": "pickled_egg",
+            "trName": "Haşlanmış Yumurta"
+        },
+        {
+            "enName": "duck",
+            "trName": "Ördek"
+        },
+        {
+            "enName": "red_onion",
+            "trName": "Kırmızı Sogan"
+        },
+        {
+            "enName": "salami",
+            "trName": "Salam"
+        },
+        {
+            "enName": "sauerkraut",
+            "trName": "Lahana Turşusu"
+        },
+        {
+            "enName": "sausage",
+            "trName": "Sosis"
+        },
+        {
+            "enName": "shrimp",
+            "trName": "Karides"
+        },
+        {
+            "enName": "steak",
+            "trName": "Döner"
+        },
+        {
+            "enName": "sucuk",
+            "trName": "Sucuk"
+        },
+        {
+            "enName": "tomato",
+            "trName": "Domates"
+        },
+        {
+            "enName": "turkey",
+            "trName": "Hindi"
+        }
+    ],
+    
+    "ingredientSweet": [
+        {
+            "enName": "banana",
+            "trName": "Muz"
+        },
+        {
+            "enName": "berry",
+            "trName": "Altın Çilek"
+        },
+        {
+            "enName": "bunny_candy",
+            "trName": "Tavşan Şeker"
+        },
+        {
+            "enName": "candy_cane",
+            "trName": "Baston Şeker"
+        },
+        {
+            "enName": "caramel",
+            "trName": "Karamel"
+        },
+        {
+            "enName": "cherry",
+            "trName": "Kiraz"
+        },
+        {
+            "enName": "chocolate_coin",
+            "trName": "Para Çikolata"
+        },
+        {
+            "enName": "chocolate_strawberry",
+            "trName": "Çikolatalı Çilek"
+        },
+        {
+            "enName": "corn_candy",
+            "trName": "Mısır Şeker"
+        },
+        {
+            "enName": "cotton_puffs",
+            "trName": "Pamuk Şeker"
+        },
+        {
+            "enName": "kiwi",
+            "trName": "Kivi"
+        },
+        {
+            "enName": "marshmallow",
+            "trName": "Marşmelov"
+        },
+        {
+            "enName": "oreo",
+            "trName": "Oreo"
+        },
+        {
+            "enName": "popcorn",
+            "trName": "Patlamış Mısır"
+        },
+        {
+            "enName": "raspberry",
+            "trName": "Ahududu"
+        },
+        {
+            "enName": "starfruit",
+            "trName": "Yıldız Meyvesi"
+        },
+        {
+            "enName": "strawberry",
+            "trName": "Çilek"
+        }
+    ],
+    
+    "sauce": [
+        {
+            "enName": "barbecue_sauce",
+            "trName": "Barbekü Sos"
+        },
+        {
+            "enName": "buffalo_sauce",
+            "trName": "Buffalo Sos"
+        },
+        {
+            "enName": "chipotle_sauce",
+            "trName": "Chipotle Sos"
+        },
+        {
+            "enName": "curry_sauce",
+            "trName": "Köri Sos"
+        },
+        {
+            "enName": "garlic_mayonnaise_sauce",
+            "trName": "Sarımsaklı Mayonez"
+        },
+        {
+            "enName": "honey_mustard_sauce",
+            "trName": "Ballı Hardal"
+        },
+        {
+            "enName": "hot_sauce",
+            "trName": "Acı Sos"
+        },
+        {
+            "enName": "ketchup_sauce",
+            "trName": "Ketçap"
+        },
+        {
+            "enName": "mayonnaise_sauce",
+            "trName": "Mayonez"
+        },
+        {
+            "enName": "mustard_sauce",
+            "trName": "Hardal"
+        },
+        {
+            "enName": "pesto_sauce",
+            "trName": "Pesto Sos"
+        },
+        {
+            "enName": "sweet_and_spicy_sauce",
+            "trName": "Acı Tatlı Sos"
+        },
+        {
+            "enName": "tartar_sauce",
+            "trName": "Tartar Sos"
+        },
+        {
+            "enName": "teriyaki_sauce",
+            "trName": "Teriyaki Sos"
+        },
+        {
+            "enName": "yogurt_sauce",
+            "trName": "Yogurt Sos"
+        }
+    ]    
+}

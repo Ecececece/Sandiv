@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'sandiv';
+    src: url('/fonts/sandiv.otf') format('opentype');
+}
+
+.sandiv-button{
+    text-shadow: 1px 1px 0px rgb(181,104,191);
+    @apply
+    h-16 w-48 flex justify-center items-center ml-16 bg-background-pink
+    border-solid border-3 border-border-pink rounded-full
+    decoration-0 text-text-pink text-3xl relative cursor-pointer
+}
+
+.sandiv-button-shadow{
+    height: 92%;
+    bottom: 5.5px;
+    @apply
+    w-full bg-button-shadow absolute rounded-full
+}
+
+.option-button{
+    text-shadow: 1px 1px 0px rgb(181,104,191);
+    @apply
+    h-20 w-60 flex justify-center items-center ml-16 bg-background-pink
+    border-solid border-3 border-border-pink rounded-full
+    decoration-0 text-text-pink text-3xl relative cursor-pointer
+}
+
+.sandiv{
+    height: 250px;
+    width: calc(48% - 1rem);
+    @apply
+    flex flex-col bg-background-pink relative
+}
+
+.sandivs-div{
+    height: calc(100vh - 6rem - 12rem);
+    @apply
+    overflow-scroll overflow-x-hidden flex flex-wrap justify-center
+    ml-4 gap-10 pb-5 pt-5
+}
+
+.sandivIMG{
+    left: 100px;
+    top: 30px;
+    @apply
+    flex justify-start items-center relative
+}
+
+.sandivName{
+    font-size: 28pt;
+    font-family: 'sandiv', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 0px rgb(181,104,191);
+    text-decoration: none;
+
+    position: absolute;
+    left: 500px;
+}
+
+.sandiv-ingredient{
+    margin-left: 20px;
+    top: 120px;
+    @apply
+    flex justify-center items-center relative
+}
+
+.bread{
+    height: 90px;
+    width: 200px;
+    position: absolute;
+    bottom: -200px;
+}
+
+.ingredient{
+    height: 70px;
+    width: 180px;
+    position: absolute;
+}
+
+.homeBanner{
+    @apply
+    h-64 m-4 flex flex-col bg-background-pink
+}
+
+.homeBannerName{
+    font-size: 128pt;
+    font-family: 'sandiv', sans-serif;
+    color: white;
+    text-shadow: 5px 5px 0px rgb(181,104,191);
+    text-decoration: none;
+    position: absolute;
+    bottom: 390px;
+}
