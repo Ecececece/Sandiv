@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-type Ingredient = { enName: string }; // Ingredient türünü belirleyin
+type Ingredient = { enName: string };
+
+type Category = 'breadSalty' | 'breadSweet' | 'cheese' | 'ingredientSalty' | 'ingredientSweet' | 'sauce';
 
 export default function Home() {
-    const [ingredients, setIngredients] = useState<Ingredient[]>([]); // Tür belirtildi
+    const [ingredients, setIngredients] = useState<Ingredient[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null); // Hata türünü netleştir
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchIngredients() {
@@ -41,7 +43,7 @@ export default function Home() {
                 setIngredients(randomIngredients);
                 setLoading(false);
             } catch (err) {
-                setError(err instanceof Error ? err.message : "Bilinmeyen hata"); // Tür güvenliği
+                setError(err instanceof Error ? err.message : "Bilinmeyen hata");
                 setLoading(false);
             }
         }
@@ -49,21 +51,22 @@ export default function Home() {
         fetchIngredients();
     }, []);
 
-    function getCategory(index: number): string {
+
+    function getCategory(index: number): Category {
         if (index === 1 || index === 11) return "breadSalty";
         else if (index >= 2 && index <= 7) return "ingredientSalty";
         else if (index === 8) return "cheese";
         else if (index >= 9 && index <= 10) return "sauce";
-        return ""; // Fallback ekleyebilirsiniz
+        return "breadSalty";
     }
 
     function getStyle(index: number): React.CSSProperties {
         if (index === 1 || index === 11) return { height: '105px', width: '270px' };
         else if (index >= 2 && index <= 10) return { height: '90px', width: '240px' };
-        return {}; // Default style döndürün
+        return {};
     }
 
-    const srcFirst = {
+    const srcFirst: Record<Category, string> = {
         breadSalty: '/malzemeler/bread/salty/',
         breadSweet: '/malzemeler/bread/sweet/',
         cheese: '/malzemeler/cheese/',
@@ -72,7 +75,7 @@ export default function Home() {
         sauce: '/malzemeler/sauce/',
     };
 
-    const srcSecond = {
+    const srcSecond: Record<Category, string> = {
         breadSalty: '.png?updatedAt=1733917749146',
         breadSweet: '.png?updatedAt=1733917747075',
         cheese: '.png?updatedAt=1733917747096',

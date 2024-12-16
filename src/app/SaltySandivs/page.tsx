@@ -2,10 +2,18 @@
 
 import { useEffect, useState } from "react";
 
+type Sandiv = {
+    name: string;
+    bread: string;
+    ingredients: string[];
+    cheese: string[] | "none";
+    sauce: string[] | "none";
+};
+
 export default function Sal() {
-    const [sandivs, setSandivs] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [sandivs, setSandivs] = useState<Sandiv[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchSandivs() {
@@ -17,7 +25,7 @@ export default function Sal() {
                 setSandivs(data.Sandivs || []);
                 setLoading(false);
             } catch (err) {
-                setError(err.message);
+                setError(err instanceof Error ? err.message : "Bilinmeyen hata");
                 setLoading(false);
             }
         }
@@ -49,16 +57,18 @@ export default function Sal() {
             </div>
 
             <div className="sandivs-div" id="scrollable">
-                {sandivs && sandivs.length > 0 ? (
+                {sandivs.length > 0 ? (
                     sandivs.map((sandiv, index) => (
                         <div key={index} className="sandiv">
                             <div className="sandivName">{sandiv.name}</div>
                             <div className="sandivIMG">
                                 <div className="flex justify-center ml-24">
+                                    {/* Ekmek resmini ekliyoruz */}
                                     <img
                                         src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
                                         className="bread"
                                     />
+                                    {/* Tuzlu malzemeler */}
                                     {sandiv.ingredients.map((ingredient, idx) => (
                                         <img
                                             key={idx}
@@ -69,9 +79,10 @@ export default function Sal() {
                                             }}
                                         />
                                     ))}
+                                    {/* Peynir resimleri */}
                                     {sandiv.cheese !== "none" && sandiv.cheese.map((cheese, cheeseidx) => (
                                         <img
-                                            key={`${cheeseidx}`}
+                                            key={cheeseidx}
                                             src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
                                             className="ingredient"
                                             style={{
@@ -79,9 +90,10 @@ export default function Sal() {
                                             }}
                                         />
                                     ))}
+                                    {/* Sos resimleri */}
                                     {sandiv.sauce !== "none" && sandiv.sauce.map((sauce, sauceidx) => (
                                         <img
-                                            key={`${sauceidx}`}
+                                            key={sauceidx}
                                             src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/${sauce}.png?updatedAt=1733917737445`}
                                             className="ingredient"
                                             style={{
@@ -89,6 +101,7 @@ export default function Sal() {
                                             }}
                                         />
                                     ))}
+                                    {/* Son bir ekmek resmini ekliyoruz */}
                                     <img
                                         src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
                                         className="bread"
