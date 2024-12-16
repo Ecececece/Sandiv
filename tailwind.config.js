@@ -21,6 +21,9 @@ module.exports = {
             },
             spacing: {
                 'top-41': '11rem'
+            },
+            height: {
+                'homeBanner': '27rem'
             }
         },
     },

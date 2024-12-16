@@ -7,6 +7,7 @@
     src: url('/fonts/sandiv.otf') format('opentype');
 }
 
+/* NAVBAR */
 .sandiv-button{
     text-shadow: 1px 1px 0px rgb(181,104,191);
     @apply
@@ -21,7 +22,50 @@
     @apply
     w-full bg-button-shadow absolute rounded-full
 }
+/* NAVBAR */
 
+
+/* ANASAYFA */
+.homeBannerShadow{
+    @apply
+    h-homeBanner w-auto bg-background-pink mx-56 my-8 relative
+    border-solid border-3 border-border-pink rounded-3xl
+}
+
+.homeBanner{
+    height: 97%;
+    bottom: 14px;
+    @apply
+    w-full bg-button-shadow flex flex-row justify-center absolute rounded-3xl
+}
+
+.homeBannerSandiv{
+    @apply
+    h-2/3 w-1/4
+}
+
+.homeBannerSandivName{
+    font-size: 26pt;
+    font-family: 'sandiv', sans-serif;
+    text-shadow: 1.5px 1.5px 0px rgb(181,104,191);
+
+    @apply
+    text-text-pink no-underline ml-6 mt-64 flex justify-center
+}
+
+.homeBannerText{
+    font-size: 58pt;
+    font-family: 'sandiv', sans-serif;
+    text-shadow: 2.5px 2.5px 0px rgb(181,104,191);
+    bottom: -23px;
+
+    @apply
+    w-full text-text-pink no-underline absolute flex justify-center border-t-3 border-border-pink rounded-3xl
+}
+/* ANASAYFA */
+
+
+/* ÜRÜNLER */
 .option-button{
     text-shadow: 1px 1px 0px rgb(181,104,191);
     @apply
@@ -35,6 +79,23 @@
     width: calc(48% - 1rem);
     @apply
     flex flex-col bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+}
+
+.sandivShadow{
+    height: 97%;
+    @apply
+    w-full bg-button-shadow rounded-3xl
+}
+
+.sandivLeft{
+    @apply
+    w-1/3
+}
+
+.sandivRight{
+    @apply
+    w-80
 }
 
 .sandivs-div{
@@ -54,12 +115,11 @@
 .sandivName{
     font-size: 28pt;
     font-family: 'sandiv', sans-serif;
-    color: white;
     text-shadow: 1px 1px 0px rgb(181,104,191);
-    text-decoration: none;
-
-    position: absolute;
     left: 500px;
+
+    @apply
+    text-text-pink absolute no-underline
 }
 
 .sandiv-ingredient{
@@ -81,18 +141,4 @@
     width: 180px;
     position: absolute;
 }
-
-.homeBanner{
-    @apply
-    h-64 m-4 flex flex-col bg-background-pink
-}
-
-.homeBannerName{
-    font-size: 128pt;
-    font-family: 'sandiv', sans-serif;
-    color: white;
-    text-shadow: 5px 5px 0px rgb(181,104,191);
-    text-decoration: none;
-    position: absolute;
-    bottom: 520px;
-}
+/* ÜRÜNLER */
