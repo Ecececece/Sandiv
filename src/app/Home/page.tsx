@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 type Sandiv = {
     name: string;
@@ -104,6 +105,7 @@ export default function Sal() {
             )}
             <div className="homeBannerText">Favori Sandivs</div>
             </div>
+            <SpeedInsights />
         </div>
     );
 }
