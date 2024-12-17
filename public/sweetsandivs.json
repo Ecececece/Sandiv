@@ -1,112 +1,46 @@
 {
     "Sandivs": [
         {
-            "name": "Spesiyal Sandiv",
-            "bread": "three_cheese_bread",
-            "cheese": ["marble_colby_cheese"],
-            "sauce": ["chipotle_sauce", "curry_sauce"],
-            "ingredients": ["beef", "fried_onion", "cucumber", "sauerkraut", "olive"]
-        },
-        {
-            "name": "Acılı Tavuk Sandiv",
-            "bread": "naan_bread",
-            "cheese": ["pepperjack_cheese"],
-            "sauce": ["hot_sauce"],
-            "ingredients": ["chicken", "green_pepper", "jalapeno", "onion"]
-        },
-        {
-            "name": "Acılı Et Sandiv",
-            "bread": "naan_bread",
-            "cheese": ["pepperjack_cheese"],
-            "sauce": ["hot_sauce"],
-            "ingredients": ["steak", "green_pepper", "jalapeno", "onion"]
-        },
-        {
-            "name": "Vejeteryan Sandiv",
-            "bread": "white_bread",
-            "cheese": ["mozzarella_cheese"],
-            "sauce": ["sweet_and_spicy_sauce", "chipotle_sauce"],
-            "ingredients": ["mushroom", "omlette", "carrot", "fajita_peppers", "fried_onion"]
-        },
-        {
-            "name": "Kanat Sandiv",
-            "bread": "tortilla",
-            "cheese": ["swiss_cheese"],
-            "sauce": ["mayonnaise_sauce"],
-            "ingredients": ["turkey", "duck", "chicken", "jalapeno"]
-        },
-    
-        {
-            "name": "Tavuk Rüyası Sandiv",
-            "bread": "three_cheese_bread",
-            "cheese": ["mozzarella_cheese"],
-            "sauce": ["ranch_sauce","chipotle_sauce"],
-            "ingredients": ["chicken","bacon","fried_onion","fajita_peppers"]
-        },
-        {
-            "name": "Et Sever Sandiv",
-            "bread": "white_bread",
-            "cheese": ["cheddar_cheese"],
-            "sauce": ["barbecue_sauce"],
-            "ingredients": ["beef","bacon","ham","meatball","steak"]
-        },
-        {
-            "name": "Kahvaltılık Sandiv",
-            "bread": "tortilla",
-            "cheese": ["pepperjack_cheese"],
-            "sauce": ["none"],
-            "ingredients": ["omlette", "sucuk", "tomato", "sausage"]
-        },
-        {
-            "name": "Vegan Sandiv",
-            "bread": "naan_bread",
+            "name": "Çilekli Pasta Sandiv",
+            "bread": "paska_bread",
             "cheese": ["none"],
-            "sauce": ["ketchup_sauce","hot_sauce","barbecue_sauce"],
-            "ingredients": ["red_onion","fried_onion","tomato","cucumber","mushroom"]
-    
+            "sauce": ["none"],
+            "ingredients": ["strawberry", "chocolate_strawberry", "cotton_puffs"]
         },
         {
-            "name": "Denizci Sandiv",
-            "bread": "cheddar_swirl_bread",
-            "cheese": ["havarti_cheese"],
-            "sauce": ["tartar_sauce"],
-            "ingredients": ["shrimp", "jalapeno", "octopus", "chunk","red_onion"]
+            "name": "Muzlu Pasta Sandiv",
+            "bread": "paska_bread",
+            "cheese": ["none"],
+            "sauce": ["none"],
+            "ingredients": ["banana", "caramel", "oreo"]
         },
         {
-            "name": "Acılı Sandiv",
-            "bread": "naan_bread",
-            "cheese": ["pepperjack_cheese"],
-            "sauce": ["hot_sauce","barbecue_sauce"],
-            "ingredients": ["steak", "jalapeno", "green_pepper", "onion","bacon","fajita_peppers"]
+            "name": "Waffle Sandiv",
+            "bread": "pumpkin_bread",
+            "cheese": ["none"],
+            "sauce": ["none"],
+            "ingredients": ["strawberry", "banana", "kiwi", "bunny_candy"]
         },
         {
-            "name": "Çiftlik Sandiv",
-            "bread": "multigrain_bread",
-            "cheese": ["havarti_cheese"],
-            "sauce": ["ranch_sauce","buffalo_sauce","mustard_sauce"],
-            "ingredients": ["bacon", "jalapeno", "steak", "onion","pickle","fajita_peppers","turkey"]
-    
+            "name": "Orman Meyveli Sandiv",
+            "bread": "paska_bread",
+            "cheese": ["none"],
+            "sauce": ["none"],
+            "ingredients": ["berry", "raspberry", "strawberry", "corn_candy"]
         },
         {
-            "name": "Acılı Tavuk Sandiv",
-            "bread": "naan_bread",
-            "cheese": ["pepperjack_cheese"],
-            "sauce": ["hot_sauce"],
-            "ingredients": ["steak", "jalapeno", "green_pepper", "onion"]
+            "name": "Deniz Yıldızı Sandiv",
+            "bread": "pumpkin_bread",
+            "cheese": ["none"],
+            "sauce": ["none"],
+            "ingredients": ["starfruit", "chocolate_coin", "popcorn"]
         },
         {
-            "name": "Hint Sandiv",
-            "bread": "naan_bread",
-            "cheese": ["pepperjack_cheese"],
-            "sauce": ["curry_sauce"],
-            "ingredients": ["steak", "jalapeno", "fajita_peppers", "onion", "ham", "pastirma"]
-        },
-        {
-            "name": "Sosyete Sandiv",
-            "bread": "three_cheese_bread",
-            "cheese": ["cheddar_cheese"],
-            "sauce": ["hot_sauce","ranch_sauce","sweet_and_spicy_sauce"],
-            "ingredients": ["steak", "jalapeno", "green_pepper", "onion","calamari" ,"ham", "steak"]
+            "name": "Noel Sandiv",
+            "bread": "paska bread",
+            "cheese": ["none"],
+            "sauce": ["none"],
+            "ingredients": ["chocolate_strawberry", "cherry", "candy_cane", "marshmallow"]
         }
     ]
 }
