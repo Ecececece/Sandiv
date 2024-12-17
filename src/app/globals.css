@@ -22,6 +22,23 @@
     @apply
     w-full bg-button-shadow absolute rounded-full
 }
+
+.footerBar{
+    @apply
+    flex flex-col text-2xl text-white gap-1
+}
+
+.Copyright{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    @apply
+    flex flex-col text-xs items-center
+}
+
+h4, h3, a:not([class]){
+    @apply
+    border-solid border-b-3 border-border-pink
+    text-center
+}
 /* NAVBAR */
 
 
@@ -30,7 +47,6 @@
     @apply
     h-homeBanner w-auto bg-background-pink relative
     border-solid border-3 border-border-pink rounded-3xl
-    mb-6
 }
 
 .homeBanner{
@@ -61,7 +77,8 @@
     bottom: -10px;
 
     @apply
-    w-full text-text-pink no-underline absolute flex justify-center border-t-3 border-border-pink rounded-3xl
+    w-full text-text-pink no-underline absolute flex justify-center
+    border-t-3 border-border-pink rounded-3xl
 }
 
 .homeButtonShadow{

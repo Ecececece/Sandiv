@@ -38,22 +38,14 @@ export default function SweetSandivs() {
         setLoading(false);
       }
 
-      const interval = setInterval(() => {
-        setDots((prev) => (prev === "..." ? "" : prev + ".")); // Dots sırasını değiştir
-      }, 500); // Her 500ms'de bir güncelle
+      const interval = setInterval(() => {setDots((prev) => (prev === "..." ? "" : prev + ".")); }, 200);
       return () => clearInterval(interval);
     }
 
     fetchSandivs();
   }, []);
 
-  if (loading){
-    return (
-        <div className="loading">
-            Yükleniyor{dots}
-        </div>
-    )
-  }
+  if (loading) return <div className="loading">Yükleniyor{dots}</div>
 
   if (error) return <div>Hata: {error}</div>;
 
