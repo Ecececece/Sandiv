@@ -37,7 +37,7 @@
         },
         {
             "name": "Noel Sandiv",
-            "bread": "paska bread",
+            "bread": "paska_bread",
             "cheese": ["none"],
             "sauce": ["none"],
             "ingredients": ["chocolate_strawberry", "cherry", "candy_cane", "marshmallow"]
