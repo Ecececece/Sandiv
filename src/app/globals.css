@@ -83,6 +83,16 @@
 
 
 /* ÜRÜNLER */
+
+.loading{
+    height: calc(100vh - 11rem);
+    font-size: 64pt;
+    text-shadow: 3px 3px 0px rgb(181,104,191);
+    @apply
+    w-full flex justify-center items-center
+    decoration-0 text-text-pink
+}
+
 .option-button{
     text-shadow: 1px 1px 0px rgb(181,104,191);
     @apply
@@ -123,7 +133,6 @@
     font-size: 28pt;
     font-family: 'sandiv', sans-serif;
     text-shadow: 1px 1px 0px rgb(181,104,191);
-    left: 500px;
 
     @apply
     text-text-pink absolute no-underline
@@ -147,5 +156,14 @@
     height: 70px;
     width: 180px;
     position: absolute;
+}
+
+.sepetButton{
+    text-shadow: 1px 1px 0px rgb(181,104,191);
+    @apply
+    h-16 w-48 flex justify-center items-center bg-background-pink
+    border-solid border-3 border-border-pink rounded-full
+    decoration-0 text-text-pink text-3xl relative cursor-pointer
+    -bottom-40
 }
 /* ÜRÜNLER */
