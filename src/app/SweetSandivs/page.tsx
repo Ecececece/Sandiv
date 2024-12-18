@@ -51,23 +51,6 @@ export default function SweetSandivs() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-center gap-20 m-4">
-        <a href="/SaltySandivs" className="option-button">
-          <div className="sandiv-button-shadow"></div>
-          <div className="absolute">Tuzlu Sandivs</div>
-        </a>
-
-        <a href="/SweetSandivs" className="option-button">
-          <div className="sandiv-button-shadow"></div>
-          <div className="absolute">Tatlı Sandivs</div>
-        </a>
-
-        <a href="/SweetSandivs" className="option-button">
-          <div className="sandiv-button-shadow"></div>
-          <div className="absolute">Kendi Sandivin</div>
-        </a>
-      </div>
-
       <div className="sandivs-div" id="scrollable">
         {sandivs.length > 0 ? (
           sandivs.map((sandiv, index) => (
