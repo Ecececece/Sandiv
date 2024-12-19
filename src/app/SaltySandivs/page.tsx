@@ -10,15 +10,21 @@ type Sandiv = {
   sauce: string[] | "none";
 };
 
+type Ingredient = { trName: string, enName: string };
+
 export default function SaltySandivs() {
   const [sandivs, setSandivs] = useState<Sandiv[]>([]);
+  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
 
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
   const [dots, setDots] = useState("");
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      setDots((prev) => (prev === "..." ? "" : prev + "."));
+    }, 200);
+
     async function fetchSandivs() {
       try {
         const response = await fetch("/saltysandivs.json");
@@ -26,51 +32,46 @@ export default function SaltySandivs() {
 
         const data = await response.json();
 
-        if (Array.isArray(data.Sandivs)) setSandivs(data.Sandivs);
-        else setSandivs([]);
-
-        setLoading(false);
+        setSandivs(Array.isArray(data.Sandivs) ? data.Sandivs : []);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Bilinmeyen hata");
+      } finally {
         setLoading(false);
       }
-
-      const interval = setInterval(() => {setDots((prev) => (prev === "..." ? "" : prev + ".")); }, 200);
-      return () => clearInterval(interval);
     }
 
     fetchSandivs();
+
+    return () => clearInterval(interval);
   }, []);
-
-  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-
-  type Ingredient = { trName: string };
 
   useEffect(() => {
     async function fetchIngredients() {
       try {
-        const response = await fetch('/ingredients.json');
-        if(!response.ok) throw new Error('Veri yüklenemedi');
+        const response = await fetch("/ingredients.json");
+        if (!response.ok) throw new Error("Veri yüklenemedi");
 
         const data = await response.json();
 
         const allIngredients = [
-          ...data.breadSalty.map((item: Ingredient) => ({ ...item, category: 'breadSalty' })),
-          ...data.breadSweet.map((item: Ingredient) => ({ ...item, category: 'breadSweet' })),
-          ...data.cheese.map((item: Ingredient) => ({ ...item, category: 'cheese' })),
-          ...data.ingredientSalty.map((item: Ingredient) => ({ ...item, category: 'ingredientSalty' })),
-          ...data.ingredientSweet.map((item: Ingredient) => ({ ...item, category: 'ingredientSweet' })),
-          ...data.sauce.map((item: Ingredient) => ({ ...item, category: 'sauce' })),
-        ]
+          ...data.breadSalty.map((item: Ingredient) => ({ ...item, category: "breadSalty" })),
+          ...data.breadSweet.map((item: Ingredient) => ({ ...item, category: "breadSweet" })),
+          ...data.cheese.map((item: Ingredient) => ({ ...item, category: "cheese" })),
+          ...data.ingredientSalty.map((item: Ingredient) => ({ ...item, category: "ingredientSalty" })),
+          ...data.ingredientSweet.map((item: Ingredient) => ({ ...item, category: "ingredientSweet" })),
+          ...data.sauce.map((item: Ingredient) => ({ ...item, category: "sauce" })),
+        ];
+
+        setIngredients(allIngredients);
       } catch (err) {
-        
+        setError(err instanceof Error ? err.message : "Bilinmeyen hata");
       }
     }
+
     fetchIngredients();
-  }, [])
+  }, []);
 
-  if (loading) return (<div className="loading">Yükleniyor{dots}</div>)
-
+  if (loading) return <div className="loading">Yükleniyor{dots}</div>;
   if (error) return <div>Hata: {error}</div>;
 
   return (
@@ -106,13 +107,12 @@ export default function SaltySandivs() {
                           src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
                           className="ingredient"
                           style={{
-                            bottom: `${
-                              -180 +
+                            bottom: `${-180 +
                               (sandiv.ingredients.length +
                                 sandiv.sauce.length +
                                 cheeseidx) *
-                                10
-                            }px`,
+                              10
+                              }px`,
                           }}
                         />
                       ))}
@@ -124,13 +124,12 @@ export default function SaltySandivs() {
                           src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/${sauce}.png?updatedAt=1733917737445`}
                           className="ingredient"
                           style={{
-                            bottom: `${
-                              -180 +
+                            bottom: `${-180 +
                               (sandiv.ingredients.length +
                                 sauceidx +
                                 sandiv.cheese.length) *
-                                10
-                            }px`,
+                              10
+                              }px`,
                           }}
                         />
                       ))}
@@ -139,21 +138,40 @@ export default function SaltySandivs() {
                       src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
                       className="bread"
                       style={{
-                        bottom: `${
-                          -180 +
+                        bottom: `${-180 +
                           (sandiv.ingredients.length +
                             sandiv.sauce.length +
                             sandiv.cheese.length) *
-                            10
-                        }px`,
+                          10
+                          }px`,
                       }}
                     />
                   </div>
                 </div>
-                
+
                 <div className="flex justify-center relative -right-32">
                   <div className="sandivName">{sandiv.name}</div>
-                  <a className="sepetButton" onClick={() => console.log(sandiv.name)}>
+
+
+                  <ul>
+                    {loading && <div>Yükleniyor...</div>}
+                    {error && <div>Hata: {error}</div>}
+
+                    {[...ingredients]
+                      .toReversed()
+                      .map((ingredient, index) => {
+                        if (sandiv.ingredients.includes(ingredient.enName)) {
+                          return (
+                            <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>
+                          );
+                        }
+                        return null;
+                      })}
+                  </ul>
+
+
+
+                  <a key={index} className="sepetButton" onClick={() => console.log(sandiv.name)}>
                     <div className="sandiv-button-shadow"></div>
                     <div className="absolute">Sepete Ekle</div>
                   </a>

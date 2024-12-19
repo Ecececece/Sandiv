@@ -22,7 +22,7 @@
         },
         {
             "enName": "tortilla",
-            "trName": "Lavaş"
+            "trName": "Lavas"
         },
         {
             "enName": "wheat_bread",
@@ -72,7 +72,7 @@
         },
         {
             "enName": "provolone_cheese",
-            "trName": "Kaşar Peyniri"
+            "trName": "Kasar Peyniri"
         },
         {
             "enName": "mozzarella_cheese",
@@ -87,7 +87,7 @@
     "ingredientSalty": [
         {
             "enName": "green_pepper",
-            "trName": "Yeşil Biber"
+            "trName": "Yesil Biber"
         },
         {
             "enName": "bacon",
@@ -127,7 +127,7 @@
         },
         {
             "enName": "fried_onion",
-            "trName": "Kızarmış Sogan"
+            "trName": "Kızarmıs Sogan"
         },
         {
             "enName": "ham",
@@ -171,11 +171,11 @@
         },
         {
             "enName": "pickle",
-            "trName": "Turşu"
+            "trName": "Tursu"
         },
         {
             "enName": "pickled_egg",
-            "trName": "Haşlanmış Yumurta"
+            "trName": "Haslanmıs Yumurta"
         },
         {
             "enName": "duck",
@@ -191,7 +191,7 @@
         },
         {
             "enName": "sauerkraut",
-            "trName": "Lahana Turşusu"
+            "trName": "Lahana Tursusu"
         },
         {
             "enName": "sausage",
@@ -230,11 +230,11 @@
         },
         {
             "enName": "bunny_candy",
-            "trName": "Tavşan Şeker"
+            "trName": "Tavsan Seker"
         },
         {
             "enName": "candy_cane",
-            "trName": "Baston Şeker"
+            "trName": "Baston Seker"
         },
         {
             "enName": "caramel",
@@ -254,11 +254,11 @@
         },
         {
             "enName": "corn_candy",
-            "trName": "Mısır Şeker"
+            "trName": "Mısır Seker"
         },
         {
             "enName": "cotton_puffs",
-            "trName": "Pamuk Şeker"
+            "trName": "Pamuk Seker"
         },
         {
             "enName": "kiwi",
@@ -266,7 +266,7 @@
         },
         {
             "enName": "marshmallow",
-            "trName": "Marşmelov"
+            "trName": "Marsmelov"
         },
         {
             "enName": "oreo",
@@ -274,7 +274,7 @@
         },
         {
             "enName": "popcorn",
-            "trName": "Patlamış Mısır"
+            "trName": "Patlamıs Mısır"
         },
         {
             "enName": "raspberry",
