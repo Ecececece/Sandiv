@@ -11,7 +11,8 @@ module.exports = {
                 'background-pink': 'rgb(244,160,180)',
                 'button-shadow': 'rgb(255,251,232);',
                 'text-pink': 'rgb(221,157,243)',
-                'bar': 'rgb(137,91,155)'
+                'bar': 'rgb(137,91,155)',
+                'body': 'rgb(255, 215, 215)'
             },
             borderWidth: {
                 '3': '3px',

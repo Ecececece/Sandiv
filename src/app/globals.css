@@ -57,11 +57,18 @@ a:not([class]), a[class*="fontFamily"]{
     @apply transition-shadow duration-200 ease-in-out
 }
 
-a:not([class]):hover{
-    text-shadow: 2px 2px 2px rgb(181,104,191);
-}
+a:not([class]):hover{text-shadow: 2px 2px 2px rgb(181,104,191);}
 
 a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
+
+.barShadow{
+    box-shadow: 0px 4px 12px 0px rgba(84, 45, 100, 0.6);
+}
+
+.footerShadow{
+    box-shadow: 0px -4px 12px 0px rgba(84, 45, 100, 0.6);
+    z-index: 50;
+}
 /* NAVBAR */
 
 
@@ -150,7 +157,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     box-shadow: 0 0 0 rgb(0, 0, 0, 0);
     text-shadow: 1px 1px 0px rgb(181,104,191);
     @apply
-    h-20 w-52 flex justify-center items-center ml-16 bg-background-pink
+    h-20 w-52 flex justify-center items-center bg-background-pink
     border-solid border-3 border-border-pink rounded-full
     decoration-0 text-text-pink text-3xl relative cursor-pointer
     transition-shadow duration-200 ease-in-out
@@ -158,11 +165,18 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .option-button:hover{box-shadow: 2px 2px 2px rgba(84, 45, 100, 0.75);}
 
+@keyframes kendiSandivinAnimation {
+    25% {box-shadow: 0px 0px 22px 0px rgba(255, 255, 255, 0.25);}
+    50% {box-shadow: 0px 0px 26px 0px rgba(255, 255, 255, 0.5);}
+    100% {box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);}
+}
+
+/*.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}*/
+
 .sandiv{
-    height: 250px;
     width: calc(48% - 1rem);
     @apply
-    flex flex-col bg-background-pink relative
+    h-72 flex flex-col bg-background-pink relative
     border-solid border-3 border-border-pink rounded-3xl
 }
 
@@ -216,19 +230,20 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 }
 
 .sepetButton{
+    box-shadow: 0 0 0 rgb(0, 0, 0, 0);
     text-shadow: 1px 1px 0px rgb(181,104,191);
     @apply
     h-16 w-48 flex justify-center items-center bg-background-pink
     border-solid border-3 border-border-pink rounded-full
     decoration-0 text-text-pink text-3xl relative cursor-pointer
-    -bottom-40
+    -bottom-48
+    transition-shadow duration-200 ease-in-out
 }
+
+.sepetButton:hover{box-shadow: 2px 2px 2px rgba(84, 45, 100, 0.75);}
 /* ÜRÜNLER */
 
 
-/* Scroll bar genişliği */
 ::-webkit-scrollbar {@apply w-2}
-/* Scroll bar'ın arka planını değiştirme */
-::-webkit-scrollbar-track {@apply bg-background-pink rounded-md}
-/* Scroll bar'ın kaydırıcı kısmı */
-::-webkit-scrollbar-thumb {@apply bg-button-shadow rounded-md}
+::-webkit-scrollbar-track {@apply bg-button-shadow rounded-md}
+::-webkit-scrollbar-thumb {@apply bg-background-pink rounded-md}

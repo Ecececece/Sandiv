@@ -12,6 +12,7 @@ type Sandiv = {
 
 export default function SaltySandivs() {
   const [sandivs, setSandivs] = useState<Sandiv[]>([]);
+
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,6 +41,33 @@ export default function SaltySandivs() {
 
     fetchSandivs();
   }, []);
+
+  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
+
+  type Ingredient = { trName: string };
+
+  useEffect(() => {
+    async function fetchIngredients() {
+      try {
+        const response = await fetch('/ingredients.json');
+        if(!response.ok) throw new Error('Veri yüklenemedi');
+
+        const data = await response.json();
+
+        const allIngredients = [
+          ...data.breadSalty.map((item: Ingredient) => ({ ...item, category: 'breadSalty' })),
+          ...data.breadSweet.map((item: Ingredient) => ({ ...item, category: 'breadSweet' })),
+          ...data.cheese.map((item: Ingredient) => ({ ...item, category: 'cheese' })),
+          ...data.ingredientSalty.map((item: Ingredient) => ({ ...item, category: 'ingredientSalty' })),
+          ...data.ingredientSweet.map((item: Ingredient) => ({ ...item, category: 'ingredientSweet' })),
+          ...data.sauce.map((item: Ingredient) => ({ ...item, category: 'sauce' })),
+        ]
+      } catch (err) {
+        
+      }
+    }
+    fetchIngredients();
+  }, [])
 
   if (loading) return (<div className="loading">Yükleniyor{dots}</div>)
 
@@ -122,7 +150,7 @@ export default function SaltySandivs() {
                     />
                   </div>
                 </div>
-
+                
                 <div className="flex justify-center relative -right-32">
                   <div className="sandivName">{sandiv.name}</div>
                   <a className="sepetButton" onClick={() => console.log(sandiv.name)}>
