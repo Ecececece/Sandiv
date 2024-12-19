@@ -47,6 +47,7 @@
 }
 
 h4, h3, a:not([class]), a[class*="fontFamily"]{
+    text-shadow: 2px 2px 2px rgb(84,45,100);
     @apply
     border-solid border-b-3 border-border-pink text-center
 }
@@ -56,9 +57,11 @@ a:not([class]), a[class*="fontFamily"]{
     @apply transition-shadow duration-200 ease-in-out
 }
 
-a:not([class]), a[class*="fontFamily"]:hover{
+a:not([class]):hover{
     text-shadow: 2px 2px 2px rgb(181,104,191);
 }
+
+a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 /* NAVBAR */
 
 
@@ -71,6 +74,19 @@ a:not([class]), a[class*="fontFamily"]:hover{
 
 .homeBanner{
     height: 97%;
+    bottom: 13px;
+    @apply
+    w-full bg-button-shadow flex flex-row justify-center absolute rounded-3xl
+}
+
+.homeBannerShadowHalf{
+    @apply
+    h-80 w-1/2 bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+}
+
+.homeBannerHalf{
+    height: 96%;
     bottom: 13px;
     @apply
     w-full bg-button-shadow flex flex-row justify-center absolute rounded-3xl
@@ -211,18 +227,8 @@ a:not([class]), a[class*="fontFamily"]:hover{
 
 
 /* Scroll bar genişliği */
-::-webkit-scrollbar {
-    width: 8px; /* Dikey scroll bar */
-    height: 8px; /* Yatay scroll bar */
-  }
-  
-  /* Scroll bar'ın arka planını değiştirme */
-  ::-webkit-scrollbar-track {
-    background: rgb(137,91,155); /* Track arka planı */
-    /*border-radius: 10px;*/
-  }
-  
-  /* Scroll bar'ın kaydırıcı kısmı */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(244,160,180); /* Kaydırıcı rengini belirler */
-  }
+::-webkit-scrollbar {@apply w-2}
+/* Scroll bar'ın arka planını değiştirme */
+::-webkit-scrollbar-track {@apply bg-background-pink rounded-md}
+/* Scroll bar'ın kaydırıcı kısmı */
+::-webkit-scrollbar-thumb {@apply bg-button-shadow rounded-md}
