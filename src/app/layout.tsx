@@ -51,7 +51,11 @@ export default function RootLayout({
         </div>
 
         {isUrunler && (
+<<<<<<< Updated upstream
           <div className="flex justify-center gap-5 p-4 barShadow index-40">
+=======
+          <div className="flex justify-between m-4 mx-40">
+>>>>>>> Stashed changes
             <a href="/" className="option-button">
               <div className="sandiv-button-shadow"></div>
               <div className="absolute">Menüler</div>
