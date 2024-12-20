@@ -183,9 +183,11 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 .sandiv{
     flex: 1 1 calc(25% - 64px);
     box-sizing: border-box;
+
     @apply
     h-96 flex flex-col bg-background-pink relative
     border-solid border-3 border-border-pink rounded-3xl
+    select-none
 }
 
 .sandivs-div {
@@ -244,11 +246,25 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .sepetButton:hover{box-shadow: 2px 2px 2px rgba(84, 45, 100, 0.75);}
 
-.ingredientScreen{
-    height: 30rem;
-    width: 30rem;
+.ingredientScreenBack{
     @apply
-    absolute z-50 bg-black
+    h-full w-full top-0 left-0 z-40 fixed bg-ingredient-screen
+}
+
+.ingredientScreen{
+    height: 46rem;
+    width: 34rem;
+    transform: translate(-50%, -50%);
+    @apply
+    flex bg-background-pink
+    border-solid border-3 border-border-pink rounded-3xl
+    fixed z-50 top-1/2 left-1/2
+}
+
+.ingredientScreenShadow{
+    height: 98%;
+    @apply
+    w-full bg-button-shadow rounded-3xl
 }
 /* ÜRÜNLER */
 

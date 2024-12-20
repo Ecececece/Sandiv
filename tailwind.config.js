@@ -12,7 +12,8 @@ module.exports = {
                 'button-shadow': 'rgb(255,251,232);',
                 'text-pink': 'rgb(221,157,243)',
                 'bar': 'rgb(137,91,155)',
-                'body': 'rgb(255, 215, 215)'
+                'body': 'rgb(255, 215, 215)',
+                'ingredient-screen': 'rgb(0, 0, 0, 0.30)'
             },
             borderWidth: {
                 '3': '3px',

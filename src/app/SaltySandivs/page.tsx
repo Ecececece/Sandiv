@@ -14,76 +14,76 @@ type Ingredient = { trName: string; enName: string };
 
 const RenderSandivItems = ({ sandiv }: { sandiv: Sandiv }) => {
   return (
-   <div className="sandivIMG">
-   <div className="flex justify-center">
-     {/* Ekmek resmi */}
-     <img
-       src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
-       className="bread"
-     />
-     {/* Tuzlu malzemeler */}
-     {sandiv.ingredients.map((ingredient, idx) => (
-       <img
-         key={idx}
-         src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/salty/${ingredient}.png?updatedAt=1733917744759`}
-         className="ingredient"
-         style={{
-           bottom: `${-180 + idx * 10}px`,
-         }}
-       />
-     ))}
-     {/* Peynir resimleri */}
-     {sandiv.cheese !== "none" &&
-       sandiv.cheese.map((cheese, cheeseidx) => (
-         <img
-           key={cheeseidx}
-           src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
-           className="ingredient"
-           style={{
-             bottom: `${
-               -180 +
-               (sandiv.ingredients.length +
-                 sandiv.sauce.length +
-                 cheeseidx) *
-                 10
-             }px`,
-           }}
-         />
-       ))}
-     {/* Sos resimleri */}
-     {sandiv.sauce !== "none" &&
-       sandiv.sauce.map((sauce, sauceidx) => (
-         <img
-           key={sauceidx}
-           src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/${sauce}.png?updatedAt=1733917737445`}
-           className="ingredient"
-           style={{
-             bottom: `${
-               -180 +
-               (sandiv.ingredients.length +
-                 sauceidx +
-                 sandiv.cheese.length) *
-                 10
-             }px`,
-           }}
-         />
-       ))}
-     {/* Ekmek resmi */}
-     <img
-       src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
-       className="bread"
-       style={{
-         bottom: `${
-           -180 +
-           (sandiv.ingredients.length +
-             sandiv.sauce.length +
-             sandiv.cheese.length) *
-             10
-         }px`,
-       }}
-     />
-   </div>
- </div>
+    <div className="sandivIMG">
+      <div className="flex justify-center">
+        {/* Ekmek resmi */}
+        <img
+          src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
+          className="bread"
+        />
+        {/* Tuzlu malzemeler */}
+        {sandiv.ingredients.map((ingredient, idx) => (
+          <img
+            key={idx}
+            src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/salty/${ingredient}.png?updatedAt=1733917744759`}
+            className="ingredient"
+            style={{
+              bottom: `${-180 + idx * 10}px`,
+            }}
+          />
+        ))}
+        {/* Peynir resimleri */}
+        {sandiv.cheese !== "none" &&
+          sandiv.cheese.map((cheese, cheeseidx) => (
+            <img
+              key={cheeseidx}
+              src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
+              className="ingredient"
+              style={{
+                bottom: `${
+                  -180 +
+                  (sandiv.ingredients.length +
+                    sandiv.sauce.length +
+                    cheeseidx) *
+                    10
+                }px`,
+              }}
+            />
+          ))}
+        {/* Sos resimleri */}
+        {sandiv.sauce !== "none" &&
+          sandiv.sauce.map((sauce, sauceidx) => (
+            <img
+              key={sauceidx}
+              src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/${sauce}.png?updatedAt=1733917737445`}
+              className="ingredient"
+              style={{
+                bottom: `${
+                  -180 +
+                  (sandiv.ingredients.length +
+                    sauceidx +
+                    sandiv.cheese.length) *
+                    10
+                }px`,
+              }}
+            />
+          ))}
+        {/* Ekmek resmi */}
+        <img
+          src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
+          className="bread"
+          style={{
+            bottom: `${
+              -180 +
+              (sandiv.ingredients.length +
+                sandiv.sauce.length +
+                sandiv.cheese.length) *
+                10
+            }px`,
+          }}
+        />
+      </div>
+    </div>
   );
 };
 
@@ -189,7 +189,9 @@ export default function SaltySandivs() {
         sandivScrollElement.style.overflow = "auto";
       }
     };
-  }, [clickSandiv]); // clickSandiv'e bağlı olarak çalışacak
+  }, [clickSandiv]);
+
+
 
   if (loading) return <div className="loading">Yükleniyor{dots}</div>;
   if (error) return <div>Hata: {error}</div>;
@@ -230,8 +232,49 @@ export default function SaltySandivs() {
       </div>
 
       {clickSandiv && (
-        <div className="ingredientScreen">
-          <RenderSandivItems sandiv={clickSandiv} />
+        <div className="ingredientScreenBack">
+          <div
+            className="ingredientScreen"
+            onClick={() => setClickSandiv(null)}
+          >
+            <div className="ingredientScreenShadow">
+              {sandivs
+                .filter((sandiv) => sandiv.name === clickSandiv.name)
+                .map((sandiv, index) => (
+                  <div key={index}>
+                    <RenderSandivItems sandiv={sandiv} />
+
+                    <div>
+                      <div>
+                        Ekmek :
+                        <ul>
+                        {[...ingredients].map((ingredient, index) => {
+                        if (sandiv.bread.includes(ingredient.enName)) {
+                          return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                        }
+                      })}
+                        </ul>
+                      </div>
+
+                      <div>
+                        Peynir :
+                        <ul id="cheeseUl"></ul>
+                      </div>
+
+                      <div>
+                        Malzeme :
+                        <ul id="ingredientUl"></ul>
+                      </div>
+
+                      <div>
+                        Sos :
+                        <ul id="sauceUl"></ul>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
         </div>
       )}
     </div>
