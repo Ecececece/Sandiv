@@ -247,28 +247,40 @@ export default function SaltySandivs() {
                     <div>
                       <div>
                         Ekmek :
-                        <ul>
+                        <ul className="list-disc">
                         {[...ingredients].map((ingredient, index) => {
-                        if (sandiv.bread.includes(ingredient.enName)) {
-                          return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
-                        }
-                      })}
+                          if (sandiv.bread.includes(ingredient.enName)) {
+                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                          }
+                        })}
                         </ul>
-                      </div>
 
-                      <div>
-                        Peynir :
-                        <ul id="cheeseUl"></ul>
-                      </div>
+                        Peynir(ler) :
+                        <ul className="list-disc">
+                        {[...ingredients].map((ingredient, index) => {
+                          if (sandiv.cheese.includes(ingredient.enName)) {
+                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                          }
+                        })}
+                        </ul>
 
-                      <div>
-                        Malzeme :
-                        <ul id="ingredientUl"></ul>
-                      </div>
+                        Malzeme(ler) :
+                        <ul className="list-disc">
+                        {[...ingredients].map((ingredient, index) => {
+                          if (sandiv.ingredients.includes(ingredient.enName)) {
+                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                          }
+                        })}
+                        </ul>
 
-                      <div>
-                        Sos :
-                        <ul id="sauceUl"></ul>
+                        Sos(lar) :
+                        <ul className="list-disc">
+                        {[...ingredients].map((ingredient, index) => {
+                          if (sandiv.sauce.includes(ingredient.enName)) {
+                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                          }
+                        })}
+                        </ul>
                       </div>
                     </div>
                   </div>
