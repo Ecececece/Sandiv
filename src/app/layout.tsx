@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="tr">
       <title>Sandiv</title>
       <body className="flex font-sandiv flex-col overflow-x-hidden bg-body">
-        <div className="h-44 w-full flex justify-center items-center bg-bar sticky top-0 z-50 border-b-3 border-border-pink barShadow">
+        <div className="h-44 w-full flex justify-center items-center bg-bar sticky top-0 z-40 border-b-3 border-border-pink barShadow">
           <a href="/Home" className="h-36 w-36">
             <img
               src="/logo.png"
@@ -51,7 +51,7 @@ export default function RootLayout({
         </div>
 
         {isUrunler && (
-          <div className="flex justify-center gap-5 p-4 barShadow index-40">
+          <div className="flex justify-center gap-5 p-4 barShadow z-30">
             <a href="/" className="option-button">
               <div className="sandiv-button-shadow"></div>
               <div className="absolute">Menüler</div>

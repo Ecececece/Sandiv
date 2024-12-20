@@ -21,7 +21,8 @@ module.exports = {
                 'sandiv': ['"sandiv"', 'sans-serif'],
             },
             spacing: {
-                'top-41': '11rem'
+                '41': '11rem',
+                '73': '18.5rem',
             },
             height: {
                 'homeBanner': '27rem'

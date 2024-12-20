@@ -56,7 +56,7 @@ export default function Sal() {
                     {sandivs.length > 0 ? (
                         sandivs.map((sandiv, index) => (
                             <div key={index} className="homeBannerSandiv">
-                                <div className="sandivIMG">
+                                <div className="flex justify-start items-center relative left-24 top-8">
                                     <div className="w-2/4 flex justify-center items-center">
                                         {/* Ekmek resmi */}
                                         <img
@@ -119,7 +119,7 @@ export default function Sal() {
             <div className="flex gap-6">
                 <a href="/Restaurants" className="homeButtonShadow">
                     <div className="homeButton">
-                        <img src="/homeBanner1.png" className="h-full aspect-auto" />
+                        <img src="/homeBanner1.png" className="h-full aspect-auto rounded-3xl" />
                     </div>
                 </a>
 
@@ -127,7 +127,7 @@ export default function Sal() {
 
                 <a href="" className="homeButtonShadow">
                     <div className="homeButton">
-                        <img src="/homeBanner2.png" className="h-full aspect-auto" />
+                        <img src="/homeBanner2.png" className="h-full aspect-auto rounded-3xl" />
                     </div>
                 </a>
             </div>

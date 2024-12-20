@@ -67,7 +67,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .footerShadow{
     box-shadow: 0px -4px 12px 0px rgba(84, 45, 100, 0.6);
-    z-index: 50;
+    z-index: 40;
 }
 /* NAVBAR */
 
@@ -173,12 +173,6 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 /*.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}*/
 
-.sandiv{
-    width: calc(48% - 1rem);
-    @apply
-    h-72 flex flex-col bg-background-pink relative
-    border-solid border-3 border-border-pink rounded-3xl
-}
 
 .sandivShadow{
     height: 97%;
@@ -186,16 +180,24 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     w-full bg-button-shadow rounded-3xl
 }
 
-.sandivs-div{
-    height: calc(100vh - 6rem - 12rem);
+.sandiv{
+    flex: 1 1 calc(25% - 64px);
+    box-sizing: border-box;
     @apply
-    overflow-scroll overflow-x-hidden flex flex-wrap justify-center
-    ml-4 gap-10 pb-5 pt-5
+    h-96 flex flex-col bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+}
+
+.sandivs-div {
+    height: calc(100vh - 18rem);
+    @apply
+    overflow-scroll overflow-x-hidden p-5
+    flex flex-wrap justify-center gap-16
 }
 
 .sandivIMG{
-    left: 100px;
-    top: 30px;
+    left: 50%;
+    top: 20%;
     @apply
     flex justify-start items-center relative
 }
@@ -236,11 +238,18 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     h-16 w-48 flex justify-center items-center bg-background-pink
     border-solid border-3 border-border-pink rounded-full
     decoration-0 text-text-pink text-3xl relative cursor-pointer
-    -bottom-48
+    -bottom-73
     transition-shadow duration-200 ease-in-out
 }
 
 .sepetButton:hover{box-shadow: 2px 2px 2px rgba(84, 45, 100, 0.75);}
+
+.ingredientScreen{
+    height: 30rem;
+    width: 30rem;
+    @apply
+    absolute z-50 bg-black
+}
 /* ÜRÜNLER */
 
 
