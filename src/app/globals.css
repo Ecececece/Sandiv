@@ -67,7 +67,8 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .footerShadow{
     box-shadow: 0px -4px 12px 0px rgba(84, 45, 100, 0.6);
-    z-index: 40;
+    @apply
+    z-40
 }
 /* NAVBAR */
 
@@ -171,7 +172,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     100% {box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);}
 }
 
-/*.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}*/
+.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}
 
 
 .sandivShadow{
@@ -240,7 +241,6 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     h-16 w-48 flex justify-center items-center bg-background-pink
     border-solid border-3 border-border-pink rounded-full
     decoration-0 text-text-pink text-3xl relative cursor-pointer
-    -bottom-73
     transition-shadow duration-200 ease-in-out
 }
 
@@ -248,11 +248,11 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .ingredientScreenBack{
     @apply
-    h-full w-full top-0 left-0 z-40 fixed bg-ingredient-screen
+    h-full w-full top-0 left-0 z-50 fixed bg-ingredient-screen
 }
 
 .ingredientScreen{
-    height: 46rem;
+    height: 50rem;
     width: 34rem;
     transform: translate(-50%, -50%);
     @apply
@@ -264,7 +264,23 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 .ingredientScreenShadow{
     height: 98%;
     @apply
-    w-full bg-button-shadow rounded-3xl
+    w-full bg-button-shadow rounded-3xl relative
+}
+
+.ingredientListMainElement{
+    font-size: 28pt;
+    text-shadow: 1px 1px 0px rgb(181,104,191);
+
+    @apply
+    text-text-pink border-solid border-b-3 border-border-pink text-center
+}
+
+.ingredientListElement{
+    font-size: 22pt;
+    text-shadow: 1px 1px 0px rgb(181,104,191);
+
+    @apply
+    text-text-pink border-solid border-b-3 border-border-pink
 }
 /* ÜRÜNLER */
 

@@ -45,7 +45,7 @@
         {
             "name": "Et Sever Sandiv",
             "bread": "white_bread",
-            "cheese": ["cheddar_cheese"],
+            "cheese": ["none"],
             "sauce": ["barbecue_sauce"],
             "ingredients": ["beef","bacon","ham","meatball","steak"]
         },
@@ -85,13 +85,6 @@
             "sauce": ["ranch_sauce","buffalo_sauce","mustard_sauce"],
             "ingredients": ["bacon", "jalapeno", "steak", "onion","pickle","fajita_peppers","turkey"]
         
-        },
-        {
-            "name": "Acılı Tavuk Sandiv",
-            "bread": "naan_bread",
-            "cheese": ["pepperjack_cheese"],
-            "sauce": ["hot_sauce"],
-            "ingredients": ["steak", "jalapeno", "green_pepper", "onion"]
         },
         {
             "name": "Hint Sandiv",

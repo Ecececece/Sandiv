@@ -12,9 +12,9 @@ type Sandiv = {
 
 type Ingredient = { trName: string; enName: string };
 
-const RenderSandivItems = ({ sandiv }: { sandiv: Sandiv }) => {
+const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, className?: string; }) => {
   return (
-    <div className="sandivIMG">
+    <div className={`sandivIMG ${className}`}>
       <div className="flex justify-center">
         {/* Ekmek resmi */}
         <img
@@ -40,13 +40,12 @@ const RenderSandivItems = ({ sandiv }: { sandiv: Sandiv }) => {
               src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
               className="ingredient"
               style={{
-                bottom: `${
-                  -180 +
+                bottom: `${-180 +
                   (sandiv.ingredients.length +
                     sandiv.sauce.length +
                     cheeseidx) *
-                    10
-                }px`,
+                  10
+                  }px`,
               }}
             />
           ))}
@@ -58,13 +57,12 @@ const RenderSandivItems = ({ sandiv }: { sandiv: Sandiv }) => {
               src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/${sauce}.png?updatedAt=1733917737445`}
               className="ingredient"
               style={{
-                bottom: `${
-                  -180 +
+                bottom: `${-180 +
                   (sandiv.ingredients.length +
                     sauceidx +
                     sandiv.cheese.length) *
-                    10
-                }px`,
+                  10
+                  }px`,
               }}
             />
           ))}
@@ -73,13 +71,12 @@ const RenderSandivItems = ({ sandiv }: { sandiv: Sandiv }) => {
           src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
           className="bread"
           style={{
-            bottom: `${
-              -180 +
+            bottom: `${-180 +
               (sandiv.ingredients.length +
                 sandiv.sauce.length +
                 sandiv.cheese.length) *
-                10
-            }px`,
+              10
+              }px`,
           }}
         />
       </div>
@@ -216,7 +213,7 @@ export default function SaltySandivs() {
 
                   <a
                     key={index}
-                    className="sepetButton"
+                    className="sepetButton -bottom-73"
                     onClick={() => console.log(sandiv.name)}
                   >
                     <div className="sandiv-button-shadow"></div>
@@ -233,55 +230,65 @@ export default function SaltySandivs() {
 
       {clickSandiv && (
         <div className="ingredientScreenBack">
-          <div
-            className="ingredientScreen"
-            onClick={() => setClickSandiv(null)}
-          >
+          <div className="ingredientScreen">
             <div className="ingredientScreenShadow">
               {sandivs
                 .filter((sandiv) => sandiv.name === clickSandiv.name)
                 .map((sandiv, index) => (
                   <div key={index}>
-                    <RenderSandivItems sandiv={sandiv} />
+                    <RenderSandivItems sandiv={sandiv} className="-bottom-20" />
+                    <div className="flex flex-col items-center">
+                      <div className="sandivName">{sandiv.name}</div>
 
-                    <div>
-                      <div>
-                        Ekmek :
-                        <ul className="list-disc">
-                        {[...ingredients].map((ingredient, index) => {
-                          if (sandiv.bread.includes(ingredient.enName)) {
-                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
-                          }
-                        })}
-                        </ul>
+                      <div className="absolute top-72 flex flex-row gap-10">
+                        <div>
+                          <div className="ingredientListMainElement">Ekmek :</div>
+                          <ul className="list-disc ingredientListElement">
+                            {[...ingredients].map((ingredient, index) => {
+                              if (sandiv.bread.includes(ingredient.enName)) {
+                                return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                              }
+                            })}
+                          </ul>
 
-                        Peynir(ler) :
-                        <ul className="list-disc">
-                        {[...ingredients].map((ingredient, index) => {
-                          if (sandiv.cheese.includes(ingredient.enName)) {
-                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
-                          }
-                        })}
-                        </ul>
+                          <div className="ingredientListMainElement mt-8">Peynir(ler) :</div>
+                          <ul className="list-disc ingredientListElement">
+                            {[...ingredients].map((ingredient, index) => {
+                              if (sandiv.cheese.includes(ingredient.enName)) {
+                                return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                              }
+                            })}
+                          </ul>
 
-                        Malzeme(ler) :
-                        <ul className="list-disc">
-                        {[...ingredients].map((ingredient, index) => {
-                          if (sandiv.ingredients.includes(ingredient.enName)) {
-                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
-                          }
-                        })}
-                        </ul>
+                          <div className="ingredientListMainElement mt-8">Sos(lar) :</div>
+                          <ul className="list-disc ingredientListElement">
+                            {[...ingredients].map((ingredient, index) => {
+                              if (sandiv.sauce.includes(ingredient.enName)) {
+                                return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                              }
+                            })}
+                          </ul>
+                        </div>
 
-                        Sos(lar) :
-                        <ul className="list-disc">
-                        {[...ingredients].map((ingredient, index) => {
-                          if (sandiv.sauce.includes(ingredient.enName)) {
-                            return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
-                          }
-                        })}
-                        </ul>
+                        <div>
+                          <div className="ingredientListMainElement">Malzeme(ler) :</div>
+                          <ul className="list-disc ingredientListElement">
+                            {[...ingredients].map((ingredient, index) => {
+                              if (sandiv.ingredients.includes(ingredient.enName)) {
+                                return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
+                              }
+                            })}
+                          </ul>
+                        </div>
                       </div>
+                      <a
+                        key={index}
+                        className="sepetButton -bottom-190"
+                        onClick={() => {console.log(sandiv.name), setClickSandiv(null)}}
+                      >
+                        <div className="sandiv-button-shadow"></div>
+                        <div className="absolute">Sepete Ekle</div>
+                      </a>
                     </div>
                   </div>
                 ))}

@@ -81,6 +81,10 @@
         {
             "enName": "swiss_cheese",
             "trName": "İsveç Peyniri"
+        },
+        {
+            "enName": "none",
+            "trName": "Yok"
         }
     ],
 

@@ -13,7 +13,7 @@ module.exports = {
                 'text-pink': 'rgb(221,157,243)',
                 'bar': 'rgb(137,91,155)',
                 'body': 'rgb(255, 215, 215)',
-                'ingredient-screen': 'rgb(0, 0, 0, 0.30)'
+                'ingredient-screen': 'rgb(0, 0, 0, 0.40)'
             },
             borderWidth: {
                 '3': '3px',
@@ -24,6 +24,7 @@ module.exports = {
             spacing: {
                 '41': '11rem',
                 '73': '18.5rem',
+                '190': '44rem',
             },
             height: {
                 'homeBanner': '27rem'
