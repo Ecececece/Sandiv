@@ -48,7 +48,7 @@
     "cheese": [
         {
             "enName": "agiago_cheese",
-            "trName": "İtalyan Peyniri"
+            "trName": "Italyan Peyniri"
         },
         {
             "enName": "cheddar_cheese",
@@ -80,7 +80,7 @@
         },
         {
             "enName": "swiss_cheese",
-            "trName": "İsveç Peyniri"
+            "trName": "Isveç Peyniri"
         },
         {
             "enName": "none",
@@ -294,7 +294,7 @@
         }
     ],
     
-    "sauce": [
+    "sauceSalty": [
         {
             "enName": "barbecue_sauce",
             "trName": "Barbekü Sos"
@@ -355,5 +355,11 @@
             "enName": "yogurt_sauce",
             "trName": "Yogurt Sos"
         }
-    ]    
+    ],    
+    "sauceSweet": [
+        {
+            "enName": "chocolate_sauce",
+            "trName": "Çikolata Sosu"
+        }
+    ]
 }

@@ -67,8 +67,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .footerShadow{
     box-shadow: 0px -4px 12px 0px rgba(84, 45, 100, 0.6);
-    @apply
-    z-40
+    z-index: 40;
 }
 /* NAVBAR */
 
@@ -172,7 +171,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     100% {box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);}
 }
 
-.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}
+/*.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}*/
 
 
 .sandivShadow{
@@ -241,6 +240,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     h-16 w-48 flex justify-center items-center bg-background-pink
     border-solid border-3 border-border-pink rounded-full
     decoration-0 text-text-pink text-3xl relative cursor-pointer
+    -bottom-73
     transition-shadow duration-200 ease-in-out
 }
 
@@ -248,11 +248,11 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .ingredientScreenBack{
     @apply
-    h-full w-full top-0 left-0 z-50 fixed bg-ingredient-screen
+    h-full w-full top-0 left-0 z-40 fixed bg-ingredient-screen
 }
 
 .ingredientScreen{
-    height: 50rem;
+    height: 46rem;
     width: 34rem;
     transform: translate(-50%, -50%);
     @apply
@@ -264,27 +264,43 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 .ingredientScreenShadow{
     height: 98%;
     @apply
-    w-full bg-button-shadow rounded-3xl relative
+    w-full bg-button-shadow rounded-3xl
 }
 
-.ingredientListMainElement{
-    font-size: 28pt;
-    text-shadow: 1px 1px 0px rgb(181,104,191);
-
+.yourSandiv-div {
+    height: calc(100vh - 18rem);
     @apply
-    text-text-pink border-solid border-b-3 border-border-pink text-center
+    p-5 flex flex-row gap-16
 }
 
-.ingredientListElement{
-    font-size: 22pt;
+.ingredientsShadow{
+    width: 15%;
     text-shadow: 1px 1px 0px rgb(181,104,191);
-
+    font-size: 20pt;
     @apply
-    text-text-pink border-solid border-b-3 border-border-pink
+    h-full flex flex-col
+    border-solid border-3 border-border-pink rounded-3xl
+    bg-background-pink text-text-pink
 }
+
+.ingredients{
+    height: 98%;
+    @apply
+    w-full flex flex-col p-5 pr-1
+    bg-button-shadow rounded-3xl
+    select-none
+}
+
+.ingredientDeneme{
+    @apply
+    h-full overflow-scroll overflow-x-hidden 
+}
+
+details details, details div {
+    margin-left: 20px; /* İç içe elemanlara girinti ekler */
+}
+
 /* ÜRÜNLER */
-
-
 ::-webkit-scrollbar {@apply w-2}
-::-webkit-scrollbar-track {@apply bg-button-shadow rounded-md}
-::-webkit-scrollbar-thumb {@apply bg-background-pink rounded-md}
+::-webkit-scrollbar-track {@apply bg-border-pink rounded-md}
+::-webkit-scrollbar-thumb {@apply bg-text-pink rounded-md}

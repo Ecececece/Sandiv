@@ -12,8 +12,7 @@ export default function RootLayout({
 
   useEffect(() => {
     setIsUrunler(
-      pathname.startsWith("/SaltySandivs") ||
-        pathname.startsWith("/SweetSandivs")
+      pathname.startsWith("/SaltySandivs") || pathname.startsWith("/SweetSandivs") || pathname.startsWith("/YourSandiv")
     );
   }, [pathname]);
 
@@ -62,7 +61,7 @@ export default function RootLayout({
               <div className="absolute">Tuzlu Sandivs</div>
             </a>
 
-            <a href="/" className="kendiSandivin option-button">
+            <a href="/YourSandiv" className="kendiSandivin option-button">
               <div className="sandiv-button-shadow"></div>
               <div className="absolute">Kendi Sandivin</div>
             </a>
@@ -105,7 +104,7 @@ export default function RootLayout({
             <a href="/">Menüler</a>
             <a href="/SaltySandivs">Tuzlu Sandivs</a>
             <a href="/SweetSandivs">Tatlı Sandivs</a>
-            <a href="/">Kendi Sandivin</a>
+            <a href="/YourSandiv">Kendi Sandivin</a>
             <a href="/">Ek Ürünler</a>
           </div>
 
