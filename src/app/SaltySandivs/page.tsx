@@ -202,7 +202,7 @@ export default function SaltySandivs() {
               key={index}
               className="sandiv"
               onClick={() => {
-                setClickSandiv(sandiv); // Bütün sandiv nesnesini set ediyoruz
+                setClickSandiv(sandiv);
               }}
             >
               <div className="sandivShadow">
