@@ -294,7 +294,7 @@
         }
     ],
     
-    "sauceSalty": [
+    "sauce": [
         {
             "enName": "barbecue_sauce",
             "trName": "Barbekü Sos"
@@ -355,11 +355,5 @@
             "enName": "yogurt_sauce",
             "trName": "Yogurt Sos"
         }
-    ],    
-    "sauceSweet": [
-        {
-            "enName": "chocolate_sauce",
-            "trName": "Çikolata Sosu"
-        }
-    ]
+    ]    
 }
