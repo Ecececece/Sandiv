@@ -2,23 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-type Sandiv = {
-  name: string;
-  bread: string;
-  ingredients: string[];
-  cheese: string[] | "none";
-  sauce: string[] | "none";
-};
-
 type Ingredient = {
   category: string; trName: string; enName: string;
 };
 
 export default function Home() {
-  const [sandivs, setSandivs] = useState<Sandiv[]>([]);
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
 
-  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -50,13 +40,9 @@ export default function Home() {
             ...item,
             category: "ingredientSweet",
           })),
-          ...data.sauceSalty.map((item: Ingredient) => ({
+          ...data.sauce.map((item: Ingredient) => ({
             ...item,
-            category: "sauceSalty",
-          })),
-          ...data.sauceSweet.map((item: Ingredient) => ({
-            ...item,
-            category: "sauceSweet",
+            category: "sauce",
           })),
         ];
 
@@ -79,10 +65,10 @@ export default function Home() {
               <details>
                 <summary>Ekmekler</summary>
                 <details>
-                  <summary>Tuzlu Ekmekler:</summary>
+                  <summary>Tuzlu Ekmekler</summary>
                   <div className="flex flex-col">
                     {[...ingredients].map((ingredient, index) => {
-                      if (ingredient.category === "breadSalty") {
+                      if (ingredient.category == "breadSalty") {
                         return (
                           <label key={`${ingredient.enName}-${index}`}>
                             <input
@@ -99,10 +85,10 @@ export default function Home() {
                 </details>
 
                 <details>
-                  <summary>Tatlı Ekmekler:</summary>
+                  <summary>Tatlı Ekmekler</summary>
                   <div className="flex flex-col">
                     {[...ingredients].map((ingredient, index) => {
-                      if (ingredient.category === "breadSweet") {
+                      if (ingredient.category == "breadSweet") {
                         return (
                           <label key={`${ingredient.enName}-${index}`}>
                             <input
@@ -123,7 +109,7 @@ export default function Home() {
                 <summary>Peynirler</summary>
                 <div className="flex flex-col">
                   {[...ingredients].map((ingredient, index) => {
-                    if (ingredient.category === "cheese" && ingredient.enName !== "none") {
+                    if (ingredient.category == "cheese" && ingredient.enName != "none") {
                       return (
                         <label key={`${ingredient.enName}-${index}`}>
                           <input
@@ -142,10 +128,10 @@ export default function Home() {
               <details>
                 <summary>Malzemeler</summary>
                 <details>
-                  <summary>Tuzlu Malzemeler:</summary>
+                  <summary>Tuzlu Malzemeler</summary>
                   <div className="flex flex-col">
                     {[...ingredients].map((ingredient, index) => {
-                      if (ingredient.category === "ingredientSalty") {
+                      if (ingredient.category == "ingredientSalty") {
                         return (
                           <label key={`${ingredient.enName}-${index}`}>
                             <input type="checkbox" name={ingredient.category} id={ingredient.enName} />
@@ -158,10 +144,10 @@ export default function Home() {
                 </details>
 
                 <details>
-                  <summary>Tatlı Malzemeler:</summary>
+                  <summary>Tatlı Malzemeler</summary>
                   <div className="flex flex-col">
                     {[...ingredients].map((ingredient, index) => {
-                      if (ingredient.category === "ingredientSweet") {
+                      if (ingredient.category == "ingredientSweet") {
                         return (
                           <label key={`${ingredient.enName}-${index}`}>
                             <input type="checkbox" name={ingredient.category} id={ingredient.enName} />
@@ -177,10 +163,10 @@ export default function Home() {
               <details>
                 <summary>Soslar</summary>
                 <details>
-                  <summary>Tuzlu Soslar:</summary>
+                  <summary>Tuzlu Soslar</summary>
                   <div className="flex flex-col">
                     {[...ingredients].map((ingredient, index) => {
-                      if (ingredient.category === "sauceSalty") {
+                      if (ingredient.category == "sauceSalty") {
                         return (
                           <label key={`${ingredient.enName}-${index}`}>
                             <input type="checkbox" name={ingredient.category} id={ingredient.enName} />
@@ -192,10 +178,10 @@ export default function Home() {
                   </div>
                 </details>
                 <details>
-                  <summary>Tatlı Soslar:</summary>
+                  <summary>Tatlı Soslar</summary>
                   <div className="flex flex-col">
                     {[...ingredients].map((ingredient, index) => {
-                      if (ingredient.category === "sauceSweet") {
+                      if (ingredient.category == "sauceSweet") {
                         return (
                           <label key={`${ingredient.enName}-${index}`}>
                             <input type="checkbox" name={ingredient.category} id={ingredient.enName} />
