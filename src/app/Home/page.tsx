@@ -7,7 +7,7 @@ type Sandiv = {
     bread: string;
     ingredients: string[];
     cheese: string[] | "none";
-    sauce: string[] | "none";
+    sauceSalty: string[] | "none";
 };
 
 export default function Sal() {
@@ -67,7 +67,7 @@ export default function Sal() {
                                         {sandiv.ingredients.map((ingredient, idx) => (
                                             <img
                                                 key={idx}
-                                                src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/salty/${ingredient}.png?updatedAt=1733917744759`}
+                                                src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/ingredient/saltyIngredient/${ingredient}.png?updatedAt=1735124761819`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + idx * 10}px`,
@@ -81,15 +81,15 @@ export default function Sal() {
                                                 src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
                                                 className="ingredient"
                                                 style={{
-                                                    bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauce.length + cheeseidx) * 10}px`
+                                                    bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauceSalty.length + cheeseidx) * 10}px`
                                                 }}
                                             />
                                         ))}
                                         {/* Sos resimleri */}
-                                        {sandiv.sauce !== "none" && sandiv.sauce.map((sauce, sauceidx) => (
+                                        {sandiv.sauceSalty !== "none" && sandiv.sauceSalty.map((sauceSalty, sauceidx) => (
                                             <img
                                                 key={sauceidx}
-                                                src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/${sauce}.png?updatedAt=1733917737445`}
+                                                src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/sauceSalty/${sauceSalty}.png?updatedAt=1735124790599`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + (sandiv.ingredients.length + sauceidx + sandiv.cheese.length) * 10}px`,
@@ -101,7 +101,7 @@ export default function Sal() {
                                             src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
                                             className="bread"
                                             style={{
-                                                bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauce.length + sandiv.cheese.length) * 10}px`,
+                                                bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauceSalty.length + sandiv.cheese.length) * 10}px`,
                                             }}
                                         />
                                     </div>

@@ -294,7 +294,7 @@
         }
     ],
     
-    "sauce": [
+    "sauceSalty": [
         {
             "enName": "barbecue_sauce",
             "trName": "Barbekü Sos"
@@ -355,5 +355,44 @@
             "enName": "yogurt_sauce",
             "trName": "Yogurt Sos"
         }
-    ]    
+    ],
+    
+    "sauceSweet": [
+        {
+            "enName": "banana_sauce",
+            "trName": "Muzlu Sos"
+        },
+        {
+            "enName": "caramel_sauce",
+            "trName": "Karamel Sosu"
+        },
+        {
+            "enName": "chocolate_sauce",
+            "trName": "Çikolata Sosu"
+        },
+        {
+            "enName": "coconut_sauce",
+            "trName": "Hindistan Cevizi Sosu"
+        },
+        {
+            "enName": "honey_sauce",
+            "trName": "Bal"
+        },
+        {
+            "enName": "mango_sauce",
+            "trName": "Mango Sosu"
+        },
+        {
+            "enName": "strawberry_sauce",
+            "trName": "Çilek Sosu"
+        },
+        {
+            "enName": "vanilla_sauce",
+            "trName": "Vanilya Sosu"
+        },
+        {
+            "enName": "white_chocolate_sauce",
+            "trName": "Beyaz Çikolata Sosu"
+        }
+    ]
 }

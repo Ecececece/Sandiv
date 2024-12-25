@@ -172,7 +172,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     100% {box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);}
 }
 
-.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}
+/*.kendiSandivin {animation: kendiSandivinAnimation 1s ease-in-out infinite;}*/
 
 
 .sandivShadow{
@@ -289,9 +289,9 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 }
 
 .ingredientsShadow{
-    width: 15%;
+    width: 20%;
     text-shadow: 1px 1px 0px rgb(181,104,191);
-    font-size: 20pt;
+    font-size: 28pt;
     @apply
     h-full flex flex-col
     border-solid border-3 border-border-pink rounded-3xl
@@ -306,13 +306,21 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     select-none
 }
 
-.ingredientDeneme{
+.ingredientScroll{
     @apply
     h-full overflow-scroll overflow-x-hidden 
 }
 
 details details, details div {
     margin-left: 20px; /* İç içe elemanlara girinti ekler */
+}
+
+label{
+    @apply flex items-center
+}
+
+input[type=checkbox]{
+    @apply mb-2 mr-1
 }
 
 /* ÜRÜNLER */

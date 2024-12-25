@@ -7,7 +7,7 @@ type Sandiv = {
   bread: string;
   ingredients: string[];
   cheese: string[] | "none";
-  sauce: string[] | "none";
+  sauceSalty: string[] | "none";
 };
 
 type Ingredient = { trName: string; enName: string };
@@ -25,7 +25,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
         {sandiv.ingredients.map((ingredient, idx) => (
           <img
             key={idx}
-            src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/salty/${ingredient}.png?updatedAt=1733917744759`}
+            src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/ingredient/saltyIngredient/${ingredient}.png?updatedAt=1735124761819`}
             className="ingredient"
             style={{
               bottom: `${-180 + idx * 10}px`,
@@ -42,7 +42,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
               style={{
                 bottom: `${-180 +
                   (sandiv.ingredients.length +
-                    sandiv.sauce.length +
+                    sandiv.sauceSalty.length +
                     cheeseidx) *
                   10
                   }px`,
@@ -50,11 +50,11 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
             />
           ))}
         {/* Sos resimleri */}
-        {sandiv.sauce !== "none" &&
-          sandiv.sauce.map((sauce, sauceidx) => (
+        {sandiv.sauceSalty !== "none" &&
+          sandiv.sauceSalty.map((sauceSalty, sauceidx) => (
             <img
               key={sauceidx}
-              src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/${sauce}.png?updatedAt=1733917737445`}
+              src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/sauceSalty/${sauceSalty}.png?updatedAt=1735124790599`}
               className="ingredient"
               style={{
                 bottom: `${-180 +
@@ -73,7 +73,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           style={{
             bottom: `${-180 +
               (sandiv.ingredients.length +
-                sandiv.sauce.length +
+                sandiv.sauceSalty.length +
                 sandiv.cheese.length) *
               10
               }px`,
@@ -148,10 +148,14 @@ export default function SaltySandivs() {
             ...item,
             category: "ingredientSweet",
           })),
-          ...data.sauce.map((item: Ingredient) => ({
+          ...data.sauceSalty.map((item: Ingredient) => ({
             ...item,
-            category: "sauce",
+            category: "sauceSalty",
           })),
+          ...data.sauceSweet.map((item: Ingredient) => ({
+            ...item,
+            category: "sauceSweet",
+          }))
         ];
 
         setIngredients(allIngredients);
@@ -263,7 +267,7 @@ export default function SaltySandivs() {
                           <div className="ingredientListMainElement mt-8">Sos(lar) :</div>
                           <ul className="list-disc ingredientListElement">
                             {[...ingredients].map((ingredient, index) => {
-                              if (sandiv.sauce.includes(ingredient.enName)) {
+                              if (sandiv.sauceSalty.includes(ingredient.enName)) {
                                 return <li key={`${ingredient.enName}-${index}`}>{ingredient.trName}</li>;
                               }
                             })}

@@ -4,42 +4,42 @@
             "name": "Çilekli Pasta Sandiv",
             "bread": "paska_bread",
             "cheese": ["none"],
-            "sauce": ["none"],
+            "sauceSweet": ["none"],
             "ingredients": ["strawberry", "chocolate_strawberry", "cotton_puffs"]
         },
         {
             "name": "Muzlu Pasta Sandiv",
             "bread": "paska_bread",
             "cheese": ["none"],
-            "sauce": ["none"],
+            "sauceSweet": ["none"],
             "ingredients": ["banana", "caramel", "oreo"]
         },
         {
             "name": "Waffle Sandiv",
             "bread": "pumpkin_bread",
             "cheese": ["none"],
-            "sauce": ["none"],
+            "sauceSweet": ["none"],
             "ingredients": ["strawberry", "banana", "kiwi", "bunny_candy"]
         },
         {
             "name": "Orman Meyveli Sandiv",
             "bread": "paska_bread",
             "cheese": ["none"],
-            "sauce": ["none"],
+            "sauceSweet": ["none"],
             "ingredients": ["berry", "raspberry", "strawberry", "corn_candy"]
         },
         {
             "name": "Deniz Yıldızı Sandiv",
             "bread": "pumpkin_bread",
             "cheese": ["none"],
-            "sauce": ["none"],
+            "sauceSweet": ["none"],
             "ingredients": ["starfruit", "chocolate_coin", "popcorn"]
         },
         {
             "name": "Noel Sandiv",
             "bread": "paska_bread",
             "cheese": ["none"],
-            "sauce": ["none"],
+            "sauceSweet": ["none"],
             "ingredients": ["chocolate_strawberry", "cherry", "candy_cane", "marshmallow"]
         }
     ]
