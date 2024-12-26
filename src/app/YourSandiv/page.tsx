@@ -63,8 +63,17 @@ export default function Home() {
 
   const [checkedBread, setCheckedBread] = useState<string | null>(null);
   const handleBreadChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) setCheckedBread(event.target.value);
-    else setCheckedBread(null);
+    if (event.target.checked)setCheckedBread(event.target.value);
+    else{
+      setCheckedBread(null);
+      setCheckedIngredients([]);
+      setCheckedCheeses([]);
+      setCheckedSauces([]);
+      setCountIngredient(0);
+      setCountCheese(0);
+      setCountSauce(0);
+    }
+    
   };
 
   const [countIngredient, setCountIngredient] = useState(0);
@@ -137,11 +146,11 @@ export default function Home() {
                           <label key={`${ingredient.enName}-${index}`}>
                             <input
                               type="checkbox"
-                              value={ingredient.category + index}
+                              value={ingredient.enName}
                               onChange={handleBreadChange}
                               disabled={
                                 !!checkedBread &&
-                                checkedBread != `${ingredient.category}${index}`
+                                checkedBread != `${ingredient.enName}`
                               }
                             />
                             {ingredient.trName}
@@ -161,11 +170,11 @@ export default function Home() {
                           <label key={`${ingredient.enName}-${index}`}>
                             <input
                               type="checkbox"
-                              value={ingredient.category + index}
+                              value={ingredient.enName}
                               onChange={handleBreadChange}
                               disabled={
                                 !!checkedBread &&
-                                checkedBread != `${ingredient.category}${index}`
+                                checkedBread != `${ingredient.enName}`
                               }
                             />
                             {ingredient.trName}
@@ -189,12 +198,12 @@ export default function Home() {
                             <label key={`${ingredient.enName}-${index}`}>
                               <input
                                 type="checkbox"
-                                value={ingredient.category + index}
+                                value={ingredient.enName}
                                 onChange={handleIngredientChange}
                                 disabled={
                                   countIngredient == 10 &&
                                   !checkedIngredients.includes(
-                                    `${ingredient.category}${index}`
+                                    `${ingredient.enName}`
                                   )
                                 }
                               />
@@ -215,12 +224,12 @@ export default function Home() {
                             <label key={`${ingredient.enName}-${index}`}>
                               <input
                                 type="checkbox"
-                                value={ingredient.category + index}
+                                value={ingredient.enName}
                                 onChange={handleIngredientChange}
                                 disabled={
                                   countIngredient == 10 &&
                                   !checkedIngredients.includes(
-                                    `${ingredient.category}${index}`
+                                    `${ingredient.enName}`
                                   )
                                 }
                               />
@@ -247,12 +256,12 @@ export default function Home() {
                           <label key={`${ingredient.enName}-${index}`}>
                             <input
                               type="checkbox"
-                              value={ingredient.category + index}
+                              value={ingredient.enName}
                               onChange={handleCheeseChange}
                               disabled={
                                 countCheese == 2 &&
                                 !checkedCheeses.includes(
-                                  `${ingredient.category}${index}`
+                                  `${ingredient.enName}`
                                 )
                               }
                             />
@@ -277,12 +286,12 @@ export default function Home() {
                             <label key={`${ingredient.enName}-${index}`}>
                               <input
                                 type="checkbox"
-                                value={ingredient.category + index}
+                                value={ingredient.enName}
                                 onChange={handleSauceChange}
                                 disabled={
                                   countSauce == 3 &&
                                   !checkedSauces.includes(
-                                    `${ingredient.category}${index}`
+                                    `${ingredient.enName}`
                                   )
                                 }
                               />
@@ -302,12 +311,12 @@ export default function Home() {
                             <label key={`${ingredient.enName}-${index}`}>
                               <input
                                 type="checkbox"
-                                value={ingredient.category + index}
+                                value={ingredient.enName}
                                 onChange={handleSauceChange}
                                 disabled={
                                   countSauce == 3 &&
                                   !checkedSauces.includes(
-                                    `${ingredient.category}${index}`
+                                    `${ingredient.enName}`
                                   )
                                 }
                               />
@@ -322,6 +331,25 @@ export default function Home() {
               )}
             </div>
           </div>
+        </div>
+
+        <div className="yourSandivIngredients">
+        {checkedBread && (<img src={`/malzemeler/${checkedBread}.webp`} className="yourSandivIngredient" loading="lazy"/>)}
+        {checkedIngredients.length > 0 &&
+          checkedIngredients.map((ingredient) => (
+            <img src={`/malzemeler/${ingredient}.webp`} className="yourSandivIngredient" loading="lazy" key={ingredient}/>
+          ))
+        }
+        {checkedCheeses.length > 0 &&
+          checkedCheeses.map((cheese) => (
+            <img src={`/malzemeler/${cheese}.webp`} className="yourSandivIngredient" loading="lazy" key={cheese}/>
+          ))
+        }
+        {checkedSauces.length > 0 &&
+          checkedSauces.map((sauce) => (
+            <img src={`/malzemeler/${sauce}.webp`} className="yourSandivIngredient" loading="lazy" key={sauce}/>
+          ))
+        }
         </div>
       </div>
     </div>

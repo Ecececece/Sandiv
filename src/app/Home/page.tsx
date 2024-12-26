@@ -60,14 +60,14 @@ export default function Sal() {
                                     <div className="w-2/4 flex justify-center items-center">
                                         {/* Ekmek resmi */}
                                         <img
-                                            src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
+                                            src={`/malzemeler/${sandiv.bread}.webp`}
                                             className="bread"
                                         />
                                         {/* Tuzlu malzemeler */}
                                         {sandiv.ingredients.map((ingredient, idx) => (
                                             <img
                                                 key={idx}
-                                                src={`https://storage.cloud.google.com/sandiv/${ingredient}.png`}
+                                                src={`/malzemeler/${ingredient}.webp`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + idx * 10}px`,
@@ -78,7 +78,7 @@ export default function Sal() {
                                         {sandiv.cheese !== "none" && sandiv.cheese.map((cheese, cheeseidx) => (
                                             <img
                                                 key={cheeseidx}
-                                                src={`https://storage.cloud.google.com/sandiv/${cheese}.png`}
+                                                src={`/malzemeler/${cheese}.webp`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauceSalty.length + cheeseidx) * 10}px`
@@ -89,7 +89,7 @@ export default function Sal() {
                                         {sandiv.sauceSalty !== "none" && sandiv.sauceSalty.map((sauceSalty, sauceidx) => (
                                             <img
                                                 key={sauceidx}
-                                                src={`https://storage.cloud.google.com/sandiv/${sauceSalty}.png`}
+                                                src={`/malzemeler/${sauceSalty}.webp`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + (sandiv.ingredients.length + sauceidx + sandiv.cheese.length) * 10}px`,
@@ -98,7 +98,7 @@ export default function Sal() {
                                         ))}
                                         {/* Ekmek resmi */}
                                         <img
-                                            src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
+                                            src={`/malzemeler/${sandiv.bread}.webp`}
                                             className="bread"
                                             style={{
                                                 bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauceSalty.length + sandiv.cheese.length) * 10}px`,

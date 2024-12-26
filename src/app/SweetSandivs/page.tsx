@@ -18,14 +18,14 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
       <div className="flex justify-center">
         {/* Ekmek resmi */}
         <img
-          src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
+          src={`/malzemeler/${sandiv.bread}.webp`}
           className="bread"
         />
         {/* Tatlı malzemeler */}
         {sandiv.ingredients.map((ingredient, idx) => (
           <img
             key={idx}
-            src={`https://storage.cloud.google.com/sandiv/${ingredient}.png`}
+            src={`/malzemeler/${ingredient}.webp`}
             className="ingredient"
             style={{
               bottom: `${-180 + idx * 10}px`,
@@ -37,7 +37,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           sandiv.cheese.map((cheese, cheeseidx) => (
             <img
               key={cheeseidx}
-              src={`https://storage.cloud.google.com/sandiv/${cheese}.png`}
+              src={`/malzemeler/${cheese}.webp`}
               className="ingredient"
               style={{
                 bottom: `${-180 +
@@ -54,7 +54,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           sandiv.sauceSweet.map((sauceSweet, sauceidx) => (
             <img
               key={sauceidx}
-              src={`https://storage.cloud.google.com/sandiv/${sauceSweet}.png`}
+              src={`/malzemeler/${sauceSweet}.webp`}
               className="ingredient"
               style={{
                 bottom: `${-180 +
@@ -68,7 +68,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           ))}
         {/* Ekmek resmi */}
         <img
-          src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
+          src={`/malzemeler/${sandiv.bread}.webp`}
           className="bread"
           style={{
             bottom: `${-180 +

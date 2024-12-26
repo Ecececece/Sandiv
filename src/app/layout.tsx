@@ -11,6 +11,8 @@ export default function RootLayout({
   const [isUrunler, setIsUrunler] = useState(false);
 
   useEffect(() => {
+    document.cookie = "my_cookie=value; SameSite=Strict; Secure; path=/";
+
     setIsUrunler(
       pathname.startsWith("/SaltySandivs") || pathname.startsWith("/SweetSandivs") || pathname.startsWith("/YourSandiv")
     );
@@ -20,7 +22,7 @@ export default function RootLayout({
     <html lang="tr">
       <title>Sandiv</title>
       <body className="flex font-sandiv flex-col overflow-x-hidden bg-body">
-        <div className="barShadow">
+        <div className="barShadow z-40 bg-bar">
           <a href="/Home" className="h-36 w-36">
             <img
               src="/logo.png"
@@ -50,7 +52,7 @@ export default function RootLayout({
         </div>
 
         {isUrunler && (
-          <div className="flex justify-center gap-5 p-4 barShadow z-30">
+          <div className="flex justify-center gap-5 p-4 barShadow bg-body z-30">
             <a href="/" className="option-button">
               <div className="sandiv-button-shadow"></div>
               <div className="absolute">Menüler</div>

@@ -66,7 +66,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     gap: 5vh;
     @apply
     h-44 w-full flex justify-center items-center
-    bg-bar sticky top-0 z-40 border-b-3 border-border-pink
+    sticky top-0 border-b-3 border-border-pink
 }
 
 .footerShadow{
@@ -406,6 +406,16 @@ label{
 
 input[type=checkbox]{
     @apply mb-2 mr-1
+}
+
+.yourSandivIngredients{
+    @apply
+    w-96 h-96 flex flex-col top-96 relative -space-y-8 gap-10
+}
+
+.yourSandivIngredient{
+    @apply
+    h-36 w-80 absolute
 }
 
 /* ÜRÜNLER */
