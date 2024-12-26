@@ -1,15 +1,14 @@
 'use client';
 import { useEffect, useRef } from "react";
-import Head from "next/head";
 
 export default function Restaurant() {
-  const mapRef = useRef(null);
+  const mapRef = useRef<HTMLDivElement | null>(null);;
 
   useEffect(() => {
     const initMap = () => {
       const center = { lat: 39.0, lng: 35.0 };
 
-      const map = new window.google.maps.Map(mapRef.current, {
+      const map = new window.google.maps.Map(mapRef.current!, {
         zoom: 6,
         center: center,
       });
