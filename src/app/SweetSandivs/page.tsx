@@ -18,14 +18,14 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
       <div className="flex justify-center">
         {/* Ekmek resmi */}
         <img
-          src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/sweet/${sandiv.bread}.png?updatedAt=1733917749146`}
+          src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
           className="bread"
         />
         {/* Tatlı malzemeler */}
         {sandiv.ingredients.map((ingredient, idx) => (
           <img
             key={idx}
-            src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/ingredient/sweetIngredient/${ingredient}.png?updatedAt=1735124762940`}
+            src={`https://storage.cloud.google.com/sandiv/${ingredient}.png`}
             className="ingredient"
             style={{
               bottom: `${-180 + idx * 10}px`,
@@ -37,7 +37,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           sandiv.cheese.map((cheese, cheeseidx) => (
             <img
               key={cheeseidx}
-              src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
+              src={`https://storage.cloud.google.com/sandiv/${cheese}.png`}
               className="ingredient"
               style={{
                 bottom: `${-180 +
@@ -54,7 +54,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           sandiv.sauceSweet.map((sauceSweet, sauceidx) => (
             <img
               key={sauceidx}
-              src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/sauceSweet/${sauceSweet}.png?updatedAt=1735124790740`}
+              src={`https://storage.cloud.google.com/sandiv/${sauceSweet}.png`}
               className="ingredient"
               style={{
                 bottom: `${-180 +
@@ -68,7 +68,7 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           ))}
         {/* Ekmek resmi */}
         <img
-          src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/sweet/${sandiv.bread}.png?updatedAt=1733917749146`}
+          src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
           className="bread"
           style={{
             bottom: `${-180 +

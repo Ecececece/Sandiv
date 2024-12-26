@@ -28,6 +28,9 @@ module.exports = {
             },
             height: {
                 'homeBanner': '27rem'
+            },
+            width: {
+                'homeBanner': '27rem'
             }
         },
     },

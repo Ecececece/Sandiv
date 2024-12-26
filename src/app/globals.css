@@ -20,7 +20,7 @@
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     
     @apply
-    h-16 w-48 flex justify-center items-center ml-16 bg-background-pink
+    h-16 w-48 flex justify-center items-center bg-background-pink
     border-solid border-3 border-border-pink rounded-full
     decoration-0 text-text-pink text-3xl relative cursor-pointer
     transition-shadow duration-200 ease-in-out
@@ -63,6 +63,10 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 .barShadow{
     box-shadow: 0px 4px 12px 0px rgba(84, 45, 100, 0.6);
+    gap: 5vh;
+    @apply
+    h-44 w-full flex justify-center items-center
+    bg-bar sticky top-0 z-40 border-b-3 border-border-pink
 }
 
 .footerShadow{
@@ -72,6 +76,11 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 }
 /* NAVBAR */
 
+.bosluk{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    @apply my-6
+}
 
 /* ANASAYFA */
 .homeBannerShadow{
@@ -142,6 +151,82 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 /* ANASAYFA */
 
+/* HAKKIMIZDA */
+.aboutDiv-Shadow{
+    width: calc(100% - 27rem);
+    @apply
+    h-homeBanner bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+    text-text-pink
+}
+
+.aboutDiv{
+    height: 97%;
+    font-size: 22pt;
+    text-shadow: 1px 1px 0px rgb(181,104,191);
+    @apply
+    w-full bg-button-shadow flex flex-col justify-center absolute rounded-3xl p-5
+}
+
+.aboutDivIMG-Shadow{
+    @apply
+    h-homeBanner w-homeBanner bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+}
+
+.aboutDivIMG{
+    height: 97%;
+    @apply
+    w-full bg-button-shadow flex flex-col justify-center absolute rounded-3xl p-5
+}
+
+.aboutMainTextDiv-Shadow{
+    @apply
+    h-32 w-auto bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+    my-6
+}
+
+.aboutMainTextDiv{
+    height: 97%;
+    @apply
+    w-full bg-button-shadow flex flex-col justify-center items-center   
+    absolute rounded-3xl p-5
+}
+
+.aboutMainText{
+    font-size: 48pt;
+    text-shadow: 2px 2px 0px rgb(181,104,191);
+    @apply
+    text-text-pink absolute top-5
+}
+/* HAKKIMIZDA */
+
+
+/* RESTORANTLAR */
+
+.restaurantsMainTextDiv-Shadow{
+    @apply
+    h-32 w-auto bg-background-pink relative
+    border-solid border-3 border-border-pink rounded-3xl
+    mb-6
+}
+
+.restaurantsMainTextDiv{
+    height: 97%;
+    @apply
+    w-full bg-button-shadow flex flex-col justify-center items-center   
+    absolute rounded-3xl p-5
+}
+
+.restaurantsMainText{
+    font-size: 48pt;
+    text-shadow: 2px 2px 0px rgb(181,104,191);
+    @apply
+    text-text-pink absolute top-5
+}
+
+/* RESTORANTLAR */
 
 /* ÜRÜNLER */
 

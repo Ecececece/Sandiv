@@ -50,7 +50,7 @@ export default function Sal() {
     if (error) return <div>Hata: {error}</div>;
 
     return (
-        <div className="mx-56 my-6">
+        <div className="bosluk">
             <div className="homeBannerShadow mb-6">
                 <div className="homeBanner bottom-3">
                     {sandivs.length > 0 ? (
@@ -60,14 +60,14 @@ export default function Sal() {
                                     <div className="w-2/4 flex justify-center items-center">
                                         {/* Ekmek resmi */}
                                         <img
-                                            src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
+                                            src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
                                             className="bread"
                                         />
                                         {/* Tuzlu malzemeler */}
                                         {sandiv.ingredients.map((ingredient, idx) => (
                                             <img
                                                 key={idx}
-                                                src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/ingredient/saltyIngredient/${ingredient}.png?updatedAt=1735124761819`}
+                                                src={`https://storage.cloud.google.com/sandiv/${ingredient}.png`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + idx * 10}px`,
@@ -78,7 +78,7 @@ export default function Sal() {
                                         {sandiv.cheese !== "none" && sandiv.cheese.map((cheese, cheeseidx) => (
                                             <img
                                                 key={cheeseidx}
-                                                src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/cheese/${cheese}.png?updatedAt=1733917747096`}
+                                                src={`https://storage.cloud.google.com/sandiv/${cheese}.png`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauceSalty.length + cheeseidx) * 10}px`
@@ -89,7 +89,7 @@ export default function Sal() {
                                         {sandiv.sauceSalty !== "none" && sandiv.sauceSalty.map((sauceSalty, sauceidx) => (
                                             <img
                                                 key={sauceidx}
-                                                src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/sauce/sauceSalty/${sauceSalty}.png?updatedAt=1735124790599`}
+                                                src={`https://storage.cloud.google.com/sandiv/${sauceSalty}.png`}
                                                 className="ingredient"
                                                 style={{
                                                     bottom: `${-180 + (sandiv.ingredients.length + sauceidx + sandiv.cheese.length) * 10}px`,
@@ -98,7 +98,7 @@ export default function Sal() {
                                         ))}
                                         {/* Ekmek resmi */}
                                         <img
-                                            src={`https://ik.imagekit.io/zvxotlby9c/malzemeler/bread/salty/${sandiv.bread}.png?updatedAt=1733917749146`}
+                                            src={`https://storage.cloud.google.com/sandiv/${sandiv.bread}.png`}
                                             className="bread"
                                             style={{
                                                 bottom: `${-180 + (sandiv.ingredients.length + sandiv.sauceSalty.length + sandiv.cheese.length) * 10}px`,
