@@ -52,8 +52,6 @@ export default function Restaurant() {
         { name: "Sandiv - Gaziantep", position: { lat: 37.0662, lng: 37.3833 } },
       ];
       
-      
-
       locations.forEach((location) => {
         const marker = new window.google.maps.Marker({
           position: location.position,
@@ -71,7 +69,6 @@ export default function Restaurant() {
       });
     };
 
-    // Dinamik olarak script'i yükle
     const loadMapScript = () => {
       if (window.google) {
         initMap();
