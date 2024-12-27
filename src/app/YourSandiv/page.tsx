@@ -63,8 +63,8 @@ export default function Home() {
 
   const [checkedBread, setCheckedBread] = useState<string | null>(null);
   const handleBreadChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked)setCheckedBread(event.target.value);
-    else{
+    if (event.target.checked) setCheckedBread(event.target.value);
+    else {
       setCheckedBread(null);
       setCheckedIngredients([]);
       setCheckedCheeses([]);
@@ -73,7 +73,6 @@ export default function Home() {
       setCountCheese(0);
       setCountSauce(0);
     }
-    
   };
 
   const [countIngredient, setCountIngredient] = useState(0);
@@ -260,9 +259,7 @@ export default function Home() {
                               onChange={handleCheeseChange}
                               disabled={
                                 countCheese == 2 &&
-                                !checkedCheeses.includes(
-                                  `${ingredient.enName}`
-                                )
+                                !checkedCheeses.includes(`${ingredient.enName}`)
                               }
                             />
                             {ingredient.trName}
@@ -334,22 +331,112 @@ export default function Home() {
         </div>
 
         <div className="yourSandivIngredients">
-        {checkedBread && (<img src={`/malzemeler/${checkedBread}.webp`} className="yourSandivIngredient" loading="lazy"/>)}
-        {checkedIngredients.length > 0 &&
-          checkedIngredients.map((ingredient) => (
-            <img src={`/malzemeler/${ingredient}.webp`} className="yourSandivIngredient" loading="lazy" key={ingredient}/>
-          ))
-        }
-        {checkedCheeses.length > 0 &&
-          checkedCheeses.map((cheese) => (
-            <img src={`/malzemeler/${cheese}.webp`} className="yourSandivIngredient" loading="lazy" key={cheese}/>
-          ))
-        }
-        {checkedSauces.length > 0 &&
-          checkedSauces.map((sauce) => (
-            <img src={`/malzemeler/${sauce}.webp`} className="yourSandivIngredient" loading="lazy" key={sauce}/>
-          ))
-        }
+          {checkedBread && (
+            <img
+              src={`/malzemeler/${checkedBread}.webp`}
+              className="yourSandivIngredient"
+              loading="lazy"
+              style={{
+                bottom: `${-200}px`,
+              }}
+            />
+          )}
+          {checkedIngredients.length > 0 &&
+            checkedIngredients.map((ingredient, index) => (
+              <img
+                src={`/malzemeler/${ingredient}.webp`}
+                className="yourSandivIngredient"
+                loading="lazy"
+                key={ingredient}
+                style={{
+                  bottom: `${-200 + (index + 1) * 25}px`,
+                }}
+              />
+            ))}
+          {checkedCheeses.length > 0 &&
+            checkedCheeses.map((cheese, index) => (
+              <img
+                src={`/malzemeler/${cheese}.webp`}
+                className="yourSandivIngredient"
+                loading="lazy"
+                key={cheese}
+                style={{
+                  bottom: `${
+                    -200 + (index + 1 + checkedIngredients.length) * 25
+                  }px`,
+                }}
+              />
+            ))}
+          {checkedSauces.length > 0 &&
+            checkedSauces.map((sauce, index) => (
+              <img
+                src={`/malzemeler/${sauce}.webp`}
+                className="yourSandivIngredient"
+                loading="lazy"
+                key={sauce}
+                style={{
+                  bottom: `${
+                    -200 +
+                    (index +
+                      1 +
+                      checkedIngredients.length +
+                      checkedCheeses.length) *
+                      25
+                  }px`,
+                }}
+              />
+            ))}
+        </div>
+
+        <div className="ingredientsShadow mr-0">
+          <div className="ingredients">
+            <div className="ingredientScroll">
+              {checkedBread != null && <div>Ekmek</div>}
+              {checkedBread &&
+                [...ingredients].map((ingredient) => {
+                  if (checkedBread.includes(ingredient.enName)) {
+                    return (
+                      <div className="ml-5" key={ingredient.enName}>
+                        {ingredient.trName}
+                      </div>
+                    );
+                  }
+                })}
+              {checkedIngredients.length > 0 && <div>Malzeme(ler)</div>}
+              {checkedIngredients &&
+                [...ingredients].map((ingredient) => {
+                  if (checkedIngredients.includes(ingredient.enName)) {
+                    return (
+                      <div className="ml-5" key={ingredient.enName}>
+                        {ingredient.trName}
+                      </div>
+                    );
+                  }
+                })}
+              {checkedCheeses.length > 0 && <div>Peynir(ler)</div>}
+              {checkedCheeses &&
+                [...ingredients].map((ingredient) => {
+                  if (checkedCheeses.includes(ingredient.enName)) {
+                    return (
+                      <div className="ml-5" key={ingredient.enName}>
+                        {ingredient.trName}
+                      </div>
+                    );
+                  }
+                })}
+              {checkedSauces.length > 0 && <div>Sos(lar)</div>}
+              {checkedSauces &&
+                [...ingredients].map((ingredient) => {
+                  if (checkedSauces.includes(ingredient.enName)) {
+                    return (
+                      <div className="ml-5" key={ingredient.enName}>
+                        {ingredient.trName}
+                      </div>
+                    );
+                  }
+                })}
+            </div>
+          </div>
         </div>
       </div>
     </div>

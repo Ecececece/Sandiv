@@ -370,7 +370,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 .yourSandiv-div {
     height: calc(100vh - 18rem);
     @apply
-    p-5 flex flex-row gap-16
+    p-5 flex flex-row justify-between
 }
 
 .ingredientsShadow{
@@ -388,16 +388,16 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     @apply
     w-full flex flex-col p-5 pr-1
     bg-button-shadow rounded-3xl
-    select-none
+    select-none z-20
 }
 
 .ingredientScroll{
     @apply
-    h-full overflow-scroll overflow-x-hidden 
+    h-full overflow-scroll overflow-x-hidden z-30
 }
 
 details details, details div {
-    margin-left: 20px; /* İç içe elemanlara girinti ekler */
+    @apply ml-5
 }
 
 label{
@@ -410,12 +410,23 @@ input[type=checkbox]{
 
 .yourSandivIngredients{
     @apply
-    w-96 h-96 flex flex-col top-96 relative -space-y-8 gap-10
+    w-96 h-96 flex flex-col relative
 }
 
 .yourSandivIngredient{
+    left: -1000px; /* Başlangıçta div solda */
+    animation: slide-right 0.5s ease-in-out forwards; /* Animasyon başlatılıyor */
     @apply
-    h-36 w-80 absolute
+    h-40 w-96 absolute
+}
+
+@keyframes slide-right {
+    0% {
+        left: -1000px; /* Başlangıçta dışarıda */
+    }
+    100% {
+        left: 0; /* Div tamamen sağa kayar */
+    }
 }
 
 /* ÜRÜNLER */

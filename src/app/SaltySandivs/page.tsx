@@ -22,28 +22,28 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           className="bread"
         />
         {/* Tuzlu malzemeler */}
-        {sandiv.ingredients.map((ingredient, idx) => (
+        {sandiv.ingredients.map((ingredient, index) => (
           <img
-            key={idx}
+            key={index}
             src={`/malzemeler/${ingredient}.webp`}
             className="ingredient"
             style={{
-              bottom: `${-180 + idx * 10}px`,
+              bottom: `${-180 + index * 10}px`,
             }}
           />
         ))}
         {/* Peynir resimleri */}
         {sandiv.cheese !== "none" &&
-          sandiv.cheese.map((cheese, cheeseidx) => (
+          sandiv.cheese.map((cheese, cheeseindex) => (
             <img
-              key={cheeseidx}
+              key={cheeseindex}
               src={`/malzemeler/${cheese}.webp`}
               className="ingredient"
               style={{
                 bottom: `${-180 +
                   (sandiv.ingredients.length +
                     sandiv.sauceSalty.length +
-                    cheeseidx) *
+                    cheeseindex) *
                   10
                   }px`,
               }}
@@ -51,15 +51,15 @@ const RenderSandivItems = ({ sandiv, className = "" }: { sandiv: Sandiv, classNa
           ))}
         {/* Sos resimleri */}
         {sandiv.sauceSalty !== "none" &&
-          sandiv.sauceSalty.map((sauceSalty, sauceidx) => (
+          sandiv.sauceSalty.map((sauceSalty, sauceindex) => (
             <img
-              key={sauceidx}
+              key={sauceindex}
               src={`/malzemeler/${sauceSalty}.webp`}
               className="ingredient"
               style={{
                 bottom: `${-180 +
                   (sandiv.ingredients.length +
-                    sauceidx +
+                    sauceindex +
                     sandiv.cheese.length) *
                   10
                   }px`,
