@@ -65,8 +65,8 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     box-shadow: 0px 4px 12px 0px rgba(84, 45, 100, 0.6);
     gap: 5vh;
     @apply
-    h-44 w-full flex justify-center items-center
-    sticky top-0 border-b-3 border-border-pink
+    w-full flex justify-center items-center
+    static md:sticky top-0 border-b-3 border-border-pink
 }
 
 .footerShadow{
@@ -96,22 +96,9 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     w-full bg-button-shadow flex flex-row justify-center absolute rounded-3xl
 }
 
-.homeBannerShadowHalf{
-    @apply
-    h-80 w-1/2 bg-background-pink relative
-    border-solid border-3 border-border-pink rounded-3xl
-}
-
-.homeBannerHalf{
-    height: 96%;
-    bottom: 13px;
-    @apply
-    w-full bg-button-shadow flex flex-row justify-center absolute rounded-3xl
-}
-
 .homeBannerSandiv{
     @apply
-    h-2/3 w-1/4
+    w-full xl:w-1/4 lg:w-1/3 md:w-1/2
 }
 
 .homeBannerSandivName{
@@ -120,27 +107,24 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     text-shadow: 1.5px 1.5px 0px rgb(181,104,191);
 
     @apply
-    text-text-pink no-underline ml-6 mt-64 flex justify-center
+    text-text-pink no-underline flex justify-center mt-52 select-none
 }
 
 .homeBannerText{
-    font-size: 58pt;
     font-family: 'sandiv', sans-serif;
     text-shadow: 2.5px 2.5px 0px rgb(181,104,191);
-    bottom: -10px;
 
     @apply
     w-full text-text-pink no-underline absolute flex justify-center
-    border-t-3 border-border-pink rounded-3xl
+    border-t-3 border-border-pink rounded-3xl -bottom-3 select-none
+    text-mini md:text-normal lg:text-large 
 }
 
 .homeButtonShadow{
-    width: calc(50% - (10rem / 2));
     @apply
-    h-40 bg-background-pink relative
+    w-full md:w-homeButtonShadow h-40 bg-background-pink relative
     border-solid border-3 border-border-pink rounded-3xl
 }
-
 
 .homeButton{
     height: 97%;
@@ -153,19 +137,19 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 
 /* HAKKIMIZDA */
 .aboutDiv-Shadow{
-    width: calc(100% - 27rem);
     @apply
-    h-homeBanner bg-background-pink relative
+    h-aboutDiv2 lg:h-aboutDiv1 2xl:h-homeBanner
+    w-full xl:w-aboutDiv bg-background-pink relative
     border-solid border-3 border-border-pink rounded-3xl
     text-text-pink
 }
 
 .aboutDiv{
     height: 97%;
-    font-size: 22pt;
     text-shadow: 1px 1px 0px rgb(181,104,191);
     @apply
     w-full bg-button-shadow flex flex-col justify-center absolute rounded-3xl p-5
+    text-2xl md:text-3xl
 }
 
 .aboutDivIMG-Shadow{
@@ -184,7 +168,7 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
     @apply
     h-32 w-auto bg-background-pink relative
     border-solid border-3 border-border-pink rounded-3xl
-    my-6
+    mb-6
 }
 
 .aboutMainTextDiv{
@@ -370,15 +354,14 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 .yourSandiv-div {
     height: calc(100vh - 18rem);
     @apply
-    p-5 flex flex-row justify-between
+    p-5 flex flex-col lg:flex-row justify-between
 }
 
 .ingredientsShadow{
-    width: 20%;
     text-shadow: 1px 1px 0px rgb(181,104,191);
     font-size: 28pt;
     @apply
-    h-full flex flex-col
+    h-2/5 lg:h-full w-full lg:w-1/5 flex-col
     border-solid border-3 border-border-pink rounded-3xl
     bg-background-pink text-text-pink
 }
@@ -414,18 +397,18 @@ input[type=checkbox]{
 }
 
 .yourSandivIngredient{
-    left: -1000px; /* Başlangıçta div solda */
-    animation: slide-right 0.5s ease-in-out forwards; /* Animasyon başlatılıyor */
+    left: -1000px;
+    animation: slide-right 0.5s ease-in-out forwards;
     @apply
     h-40 w-96 absolute
 }
 
 @keyframes slide-right {
     0% {
-        left: -1000px; /* Başlangıçta dışarıda */
+        left: -1000px;
     }
     100% {
-        left: 0; /* Div tamamen sağa kayar */
+        left: 0;
     }
 }
 

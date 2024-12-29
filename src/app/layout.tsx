@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="tr">
       <title>Sandiv</title>
       <body className="flex font-sandiv flex-col overflow-x-hidden bg-body">
-        <div className="barShadow z-40 bg-bar">
+        <div className="h-auto py-4 md:h-44 barShadow z-50 bg-bar flex-col md:flex-row">
           <a href="/Home" className="h-36 w-36">
             <img
               src="/logo.png"
@@ -33,11 +33,6 @@ export default function RootLayout({
           <a href="/SaltySandivs" className="sandiv-button">
             <div className="sandiv-button-shadow"></div>
             <div className="absolute">Ürünler</div>
-          </a>
-
-          <a href="/Campaigns" className="sandiv-button">
-            <div className="sandiv-button-shadow"></div>
-            <div className="absolute">Kampanyalar</div>
           </a>
 
           <a href="/Restaurants" className="sandiv-button">
@@ -52,12 +47,7 @@ export default function RootLayout({
         </div>
 
         {isUrunler && (
-          <div className="flex justify-center gap-5 p-4 barShadow bg-body z-30">
-            <a href="/" className="option-button">
-              <div className="sandiv-button-shadow"></div>
-              <div className="absolute">Menüler</div>
-            </a>
-
+          <div className="h-auto flex flex-col md:flex-row md:h-44 justify-center gap-5 p-4 barShadow bg-body z-30">
             <a href="/SaltySandivs" className="option-button">
               <div className="sandiv-button-shadow"></div>
               <div className="absolute">Tuzlu Sandivs</div>
@@ -72,17 +62,12 @@ export default function RootLayout({
               <div className="sandiv-button-shadow"></div>
               <div className="absolute">Tatlı Sandivs</div>
             </a>
-
-            <a href="/" className="option-button">
-              <div className="sandiv-button-shadow"></div>
-              <div className="absolute">Ek Ürünler</div>
-            </a>
           </div>
         )}
 
         {children}
 
-        <div className="h-72 w-full flex justify-between items-center bg-bar py-6 px-10 border-t-3 border-border-pink footerShadow">
+        <div className="h-auto xl:h-72 w-full flex justify-between items-center bg-bar py-6 px-10 border-t-3 border-border-pink footerShadow flex-col xl:flex-row gap-5 xl:gap-0">
           <div className="footerBar">
             <h4>Site Haritası</h4>
             <a href="/Home">Ana Sayfa</a>
@@ -90,6 +75,13 @@ export default function RootLayout({
             <a href="/Campaigns">Kampanyalar</a>
             <a href="/Restaurants">Restorantlar</a>
             <a href="/About">Hakkımızda</a>
+          </div>
+
+          <div className="footerBar">
+            <h4>Ürünlerimiz</h4>
+            <a href="/SaltySandivs">Tuzlu Sandivs</a>
+            <a href="/YourSandiv">Kendi Sandivin</a>
+            <a href="/SweetSandivs">Tatlı Sandivs</a>
           </div>
 
           <div className="footerBar">
@@ -101,16 +93,7 @@ export default function RootLayout({
             <a href="">Çerez Ayarları</a>
           </div>
 
-          <div className="footerBar">
-            <h4>Ürünler</h4>
-            <a href="/">Menüler</a>
-            <a href="/SaltySandivs">Tuzlu Sandivs</a>
-            <a href="/SweetSandivs">Tatlı Sandivs</a>
-            <a href="/YourSandiv">Kendi Sandivin</a>
-            <a href="/">Ek Ürünler</a>
-          </div>
-
-          <a href="/Home" className="h-40 w-40">
+          <a href="/Home" className="h-40 w-40 hidden xl:block">
             <img
               src="/logo.png"
               className="rounded-2xl border-solid border-3 border-border-pink"

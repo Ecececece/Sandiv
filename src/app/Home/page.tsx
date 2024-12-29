@@ -17,6 +17,26 @@ export default function Sal() {
 
     const [dots, setDots] = useState("");
 
+    const [visibleCount, setVisibleCount] = useState(4);
+
+    useEffect(() => {
+        function handleResize() {
+            const isXl= window.matchMedia("(min-width: 1280px)").matches; // xl
+            const isLg= window.matchMedia("(min-width: 1024px)").matches; // lg
+            const isMd = window.matchMedia("(min-width: 768px)").matches; // md
+            if(isXl) setVisibleCount(4);
+            else if(isLg) setVisibleCount(3);
+            else if(isMd) setVisibleCount(2);
+            else setVisibleCount(1);
+        }
+    
+        handleResize(); // İlk çağrım
+        window.addEventListener("resize", handleResize);
+    
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+      
+
     useEffect(() => {
         async function fetchSandivs() {
             try {
@@ -25,7 +45,7 @@ export default function Sal() {
 
                 const data = await response.json();
                 if (Array.isArray(data.Sandivs)) {
-                    const randomSandiv = data.Sandivs.sort(() => Math.random() - 0.5).slice(0, 4)
+                    const randomSandiv = data.Sandivs.sort(() => Math.random() - 0.5).slice(0, visibleCount);
                     console.log(randomSandiv);
 
                     setSandivs(randomSandiv);
@@ -43,7 +63,7 @@ export default function Sal() {
         }
 
         fetchSandivs();
-    }, []);
+    }, [visibleCount]);
 
     if (loading) return <div className="loading">Yükleniyor{dots}</div>
 
@@ -56,8 +76,8 @@ export default function Sal() {
                     {sandivs.length > 0 ? (
                         sandivs.map((sandiv, index) => (
                             <div key={index} className="homeBannerSandiv">
-                                <div className="flex justify-start items-center relative left-24 top-8">
-                                    <div className="w-2/4 flex justify-center items-center">
+                                <div className="relative p-5">
+                                    <div className="flex justify-center">
                                         {/* Ekmek resmi */}
                                         <img
                                             src={`/malzemeler/${sandiv.bread}.webp`}
@@ -116,34 +136,20 @@ export default function Sal() {
                 <div className="homeBannerText">Favori Sandivs</div>
             </div>
 
-            <div className="flex gap-6">
+            <div className="flex gap-6 flex-col items-center md:flex-row">
                 <a href="/Restaurants" className="homeButtonShadow">
                     <div className="homeButton">
                         <img src="/homeBanner1.png" className="h-full aspect-auto rounded-3xl" />
                     </div>
                 </a>
 
-                <a href="/Home" className="h-40 w-40"><img src="/logo.png" className="rounded-2xl border-solid border-3 border-border-pink" /></a>
+                <a href="/Home" className="h-40 w-40 hidden md:block"><img src="/logo.png" className="w-full h-full rounded-2xl border-solid border-3 border-border-pink" /></a>
 
                 <a href="" className="homeButtonShadow">
                     <div className="homeButton">
                         <img src="/homeBanner2.png" className="h-full aspect-auto rounded-3xl" />
                     </div>
                 </a>
-            </div>
-
-            <div className="flex gap-6 mt-6">
-                <div className="homeBannerShadowHalf">
-                    <div className="homeBannerHalf">
-
-                    </div>
-                </div>
-
-                <div className="homeBannerShadowHalf">
-                    <div className="homeBannerHalf">
-                        
-                    </div>
-                </div>
             </div>
         </div>
     );

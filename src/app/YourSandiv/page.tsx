@@ -128,7 +128,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="h-customScreen lg:h-auto">
       <div className="yourSandiv-div">
         <div className="ingredientsShadow">
           <div className="ingredients">
@@ -330,12 +330,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="yourSandivIngredients">
+        <div className="yourSandivIngredients -bottom-96 lg:-bottom-0">
           {checkedBread && (
             <img
               src={`/malzemeler/${checkedBread}.webp`}
               className="yourSandivIngredient"
-              loading="lazy"
               style={{
                 bottom: `${-200}px`,
               }}
@@ -346,7 +345,6 @@ export default function Home() {
               <img
                 src={`/malzemeler/${ingredient}.webp`}
                 className="yourSandivIngredient"
-                loading="lazy"
                 key={ingredient}
                 style={{
                   bottom: `${-200 + (index + 1) * 25}px`,
@@ -358,7 +356,6 @@ export default function Home() {
               <img
                 src={`/malzemeler/${cheese}.webp`}
                 className="yourSandivIngredient"
-                loading="lazy"
                 key={cheese}
                 style={{
                   bottom: `${
@@ -372,7 +369,6 @@ export default function Home() {
               <img
                 src={`/malzemeler/${sauce}.webp`}
                 className="yourSandivIngredient"
-                loading="lazy"
                 key={sauce}
                 style={{
                   bottom: `${
@@ -388,7 +384,7 @@ export default function Home() {
             ))}
         </div>
 
-        <div className="ingredientsShadow mr-0">
+        <div className="ingredientsShadow mr-0 mt-130 lg:mt-0">
           <div className="ingredients">
             <div className="ingredientScroll">
               {checkedBread != null && <div>Ekmek</div>}

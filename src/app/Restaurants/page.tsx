@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-// Konum türünü tanımlıyoruz
 interface Location {
   name: string;
   position: {

@@ -3,7 +3,13 @@
 export default function About() {
   return (
     <div className="bosluk">
-      <div className="flex flex-row gap-6">
+      <div className="aboutMainTextDiv-Shadow">
+        <div className="aboutMainTextDiv">
+          <div className="aboutMainText">Sandiv Hakkında</div>
+        </div>
+      </div>
+
+      <div className="flex flex-col xl:flex-row gap-6 mb-6 items-center">
         <div className="aboutDiv-Shadow">
           <div className="aboutDiv">
             <div className="break-words">
@@ -24,20 +30,23 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="aboutDivIMG-Shadow">
-          <img src="" className="aboutDivIMG"/>
+        <div className="aboutDivIMG-Shadow hidden xl:block">
+          <img src="/aboutBanner1.webp" className="aboutDivIMG" />
         </div>
       </div>
 
-      <div className="aboutMainTextDiv-Shadow">
-        <div className="aboutMainTextDiv">
-            <div className="aboutMainText">Sandiv Hakkında</div>
+      <div className="flex flex-col lg:flex-row xl:hidden items-center lg:justify-between mb-6">
+      <div className="aboutDivIMG-Shadow mb-6 lg:mb-0">
+          <img src="/aboutBanner1.webp" className="aboutDivIMG" />
+        </div>
+      <div className="aboutDivIMG-Shadow">
+          <img src="/aboutBanner2.webp" className="aboutDivIMG" />
         </div>
       </div>
 
-      <div className="flex flex-row gap-6">
-        <div className="aboutDivIMG-Shadow">
-          <img src="" className="aboutDivIMG"/>
+      <div className="flex flex-col xl:flex-row gap-6 items-center">
+      <div className="aboutDivIMG-Shadow hidden xl:block">
+          <img src="/aboutBanner2.webp" className="aboutDivIMG" />
         </div>
         <div className="aboutDiv-Shadow">
           <div className="aboutDiv">
