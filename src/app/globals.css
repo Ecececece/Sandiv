@@ -204,10 +204,10 @@ a[class*="fontFamily"]:hover{text-shadow: 2px 2px 2px rgb(181, 104, 191);}
 }
 
 .restaurantsMainText{
-    font-size: 48pt;
     text-shadow: 2px 2px 0px rgb(181,104,191);
     @apply
-    text-text-pink absolute top-5
+    text-text-pink absolute
+    text-5xl lg:text-8xl
 }
 
 /* RESTORANTLAR */
